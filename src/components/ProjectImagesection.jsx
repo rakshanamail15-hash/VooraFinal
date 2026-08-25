@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./ProjectImageSection.css";
+import "./ProjectImagesection.css";
 
 const VooraOneSeaImage = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917320/oneseaRibbon_bxxrf3.png";
 const VooraAgastya = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785923335/AgastyaRibbon_trwsxv.jpg";
