@@ -1,0 +1,302 @@
+/* =========================================================
+   TRUST / WHY CHOOSE US — fully responsive
+   Breakpoints: 320 → 480 → 576 → 768 → 992 → 1200 → 1600+
+========================================================= */
+
+.trust {
+  position: relative;
+  padding: clamp(50px, 7vw, 120px) 0 !important;
+
+  background: rgb(1 88 0 0 / 6%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url(https://res.cloudinary.com/wdfwbagg/image/upload/v1785917267/contact_muhlva.webp),
+    radial-gradient(circle at 12% 20%, rgba(139, 92, 246, 0.4), transparent 40%),
+    radial-gradient(circle at 88% 80%, rgba(109, 40, 217, 0.45), transparent 42%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.trust .container.trust-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+  box-sizing: border-box;
+}
+
+.trust-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: clamp(28px, 4vw, 50px);
+}
+
+.trust-copy .eyebrow {
+  display: inline-block;
+
+  color:#fff;
+  margin-bottom: 12px;
+}
+
+.trust-copy h2 {
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.trust-copy h2 .accent {
+  color: #fff;
+}
+
+.trust-copy p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 14px;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/* Stats grid — 4 cards */
+.trust-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 1.4vw, 18px);
+}
+
+.trust-stat {
+  padding: clamp(18px, 2.4vw, 28px) clamp(8px, 1.4vw, 16px);
+  text-align: center;
+  border-radius: var(--radius, 14px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  transition: transform 0.35s var(--ease, ease), background 0.35s;
+  min-width: 0;
+}
+
+.trust-stat:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.trust-stat strong {
+  display: block;
+  font-family: var(--font-head, inherit);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.trust-stat span {
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(0.65rem, 1.3vw, 0.78rem);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.3;
+}
+
+/* =========================================================
+   TABLET ≤ 991px — stack copy on top, stats below
+========================================================= */
+@media (max-width: 991px) {
+  .trust-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .trust-copy {
+    text-align: center;
+  }
+
+  .trust-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET / LARGE MOBILE ≤ 768px
+========================================================= */
+@media (max-width: 768px) {
+  .trust {
+    padding: 60px 0;
+  }
+
+  .trust-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .trust-stat {
+    padding: 22px 10px;
+  }
+}
+
+/* =========================================================
+   MOBILE ≤ 576px
+========================================================= */
+@media (max-width: 576px) {
+  .trust {
+    padding: 50px 0;
+  }
+
+  .trust-copy h2 {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+
+  .trust-copy p {
+    font-size: 0.92rem;
+  }
+
+  .trust-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .trust-stat {
+    padding: 20px 8px;
+  }
+
+  .trust-stat strong {
+    font-size: 1.55rem;
+  }
+
+  .trust-stat span {
+    font-size: 0.7rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE ≤ 480px
+========================================================= */
+@media (max-width: 480px) {
+  .trust {
+    padding: 44px 0;
+  }
+
+  .trust-copy h2 {
+    font-size: 1.4rem;
+    letter-spacing: -0.3px;
+  }
+
+  .trust-copy p {
+    font-size: 0.88rem;
+    margin-top: 10px;
+  }
+
+  .trust-stats {
+    gap: 10px;
+  }
+
+  .trust-stat {
+    padding: 18px 6px;
+    border-radius: 12px;
+  }
+
+  .trust-stat strong {
+    font-size: 1.4rem;
+  }
+
+  .trust-stat span {
+    font-size: 0.65rem;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL ≤ 380px (small Android / iPhone SE)
+========================================================= */
+@media (max-width: 380px) {
+  .trust {
+    padding: 38px 0;
+  }
+
+  .trust .container.trust-inner {
+    padding: 0 14px;
+  }
+
+  .trust-copy .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .trust-copy h2 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .trust-copy p {
+    font-size: 0.82rem;
+  }
+
+  .trust-stats {
+    gap: 8px;
+  }
+
+  .trust-stat {
+    padding: 16px 4px;
+  }
+
+  .trust-stat strong {
+    font-size: 1.25rem;
+  }
+
+  .trust-stat span {
+    font-size: 0.6rem;
+  }
+}
+
+/* =========================================================
+   ULTRA-SMALL ≤ 360px / 320px (Galaxy Fold, old iPhones)
+========================================================= */
+@media (max-width: 360px) {
+  .trust .container.trust-inner {
+    padding: 0 12px;
+  }
+
+  .trust-copy h2 {
+    font-size: 1.15rem;
+  }
+
+  .trust-stats {
+    gap: 6px;
+  }
+
+  .trust-stat {
+    padding: 14px 4px;
+    border-radius: 10px;
+  }
+
+  .trust-stat strong {
+    font-size: 1.15rem;
+  }
+
+  .trust-stat span {
+    font-size: 0.58rem;
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP ≥ 1600px
+========================================================= */
+@media (min-width: 1600px) {
+  .trust .container.trust-inner {
+    max-width: 1500px;
+  }
+
+  .trust-stat strong {
+    font-size: 2.3rem;
+  }
+
+  .trust-stat span {
+    font-size: 0.85rem;
+  }
+}

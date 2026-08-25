@@ -1,0 +1,227 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.privacy-root {
+  background: #fdfdfc;
+  color: #333;
+}
+
+.privacy-hero {
+  background: #071d33;
+  position: relative;
+  overflow: hidden;
+  padding: 160px 5% 80px;
+  text-align: center;
+}
+
+.privacy-hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.privacy-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(217, 184, 140, 0.15);
+  border: 1px solid rgba(217, 184, 140, 0.3);
+  color: #d9b88c;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.privacy-title {
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.privacy-title .accent {
+  color: #bf953f;
+}
+
+.privacy-hero-sub {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #b8c6d8;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.privacy-content-wrap {
+  padding: 75px 5%;
+}
+
+.privacy-container {
+  margin: 0 auto;
+}
+
+.privacy-block {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.privacy-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.08);
+}
+
+.privacy-block-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.privacy-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: #faf7f0;
+  color: #bf953f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.privacy-block h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0;
+}
+
+.privacy-block p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.privacy-block p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.privacy-list li {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+}
+
+.privacy-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #bf953f;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.privacy-footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 40px;
+  background: #faf7f0;
+  border-radius: 20px;
+  border: 1px solid rgba(191, 149, 63, 0.2);
+}
+
+.privacy-footer p {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #111827;
+  font-style: italic;
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .privacy-hero {
+    padding: 120px 20px 60px;
+  }
+  
+  .privacy-title {
+    font-size: 42px;
+  }
+
+  .privacy-content-wrap {
+    padding: 60px 20px;
+  }
+
+  .privacy-block {
+    padding: 30px;
+  }
+  
+  .privacy-block h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-title {
+    font-size: 34px;
+  }
+  
+  .privacy-hero-sub {
+    font-size: 16px;
+  }
+  
+  .privacy-block {
+    padding: 24px 20px;
+  }
+  
+  .privacy-block h2 {
+    font-size: 22px;
+  }
+  
+  .privacy-block p, .privacy-list li {
+    font-size: 15px;
+  }
+}

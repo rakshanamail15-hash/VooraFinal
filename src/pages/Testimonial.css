@@ -1,0 +1,305 @@
+/* =========================================================
+   TESTIMONIAL PAGE — fully responsive (320px → 1600px+)
+========================================================= */
+
+.testimonial-page {
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Spacer that matches the fixed navbar height */
+.testimonial-page .hero-navbar {
+  height: 86px;
+}
+
+.vs-sections {
+  padding: 75px 5%;
+  background: #fdf8f4;
+}
+
+/* =========================
+   HERO BANNER
+========================= */
+.ts-page-hero {
+  position: relative;
+  width: 100%;
+  min-height: 56vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(135deg, rgba(15, 10, 35, 0.78), rgba(109, 40, 217, 0.65)),
+    url("../assets/image/hero3.webp") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.ts-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1000px 500px at 50% 100%,
+      rgba(109, 40, 217, 0.4),
+      transparent 60%);
+  pointer-events: none;
+}
+
+.ts-page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.ts-page-eyebrow {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  color: #935ce9;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.ts-page-hero-content h1 {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+
+.ts-page-accent {
+  background: linear-gradient(135deg, #FFD700, #FFD700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ts-page-hero-content p {
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 auto;
+  max-width: 580px;
+}
+
+/* =========================
+   VIDEO STORIES SECTION
+========================= */
+.vs-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.vs-info {
+  flex: 0 0 32%;
+}
+
+.vs-gallery {
+  flex: 1;
+  overflow: hidden;
+}
+
+.vs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.vs-card {
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout paint style;
+  /* Exactly 2 cards per view minus the 24px gap */
+  flex: 0 0 calc(50% - 12px) !important;
+  background: #fff;
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  height: auto !important;
+}
+
+.vs-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(147, 92, 233, 0.15);
+}
+
+.vs-card iframe {
+  width: 100% !important;
+  height: 80vh !important;
+  border: none;
+  display: block;
+  background: #000;
+}
+
+.vs-card-label {
+  background: #fff;
+}
+
+.vs-card-title {
+  display: block;
+  margin: 0;
+}
+
+/* =========================
+   LARGE DESKTOP ≥ 1600px
+========================= */
+@media (min-width: 1600px) {
+  .testimonial-page .hero-navbar {
+    height: 100px;
+  }
+
+  .ts-page-hero {
+    min-height: 60vh;
+    padding: 100px 24px;
+  }
+}
+
+/* =========================
+   ≤ 1200px
+========================= */
+@media (max-width: 1200px) {
+  .testimonial-page .hero-navbar {
+    height: 92px;
+  }
+}
+
+/* =========================
+   TABLET ≤ 991px
+========================= */
+@media (max-width: 991px) {
+  .testimonial-page .hero-navbar {
+    height: 74px;
+  }
+
+  .ts-page-hero {
+    min-height: 50vh;
+    padding: 64px 22px;
+  }
+
+  .ts-page-hero-content p {
+    font-size: 0.98rem;
+  }
+
+  .vs-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .vs-info {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   MOBILE ≤ 768px
+========================= */
+@media (max-width: 768px) {
+  .testimonial-page .hero-navbar {
+    height: 74px;
+  }
+
+  .ts-page-hero {
+    min-height: 44vh;
+    padding: 54px 18px;
+  }
+
+  .ts-page-eyebrow {
+    font-size: 0.65rem;
+    padding: 6px 14px;
+    letter-spacing: 0.14em;
+    margin-bottom: 18px;
+  }
+
+  .ts-page-hero-content p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .vs-card {
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout paint style;
+    /* Show 1 card fully on mobile */
+    flex: 0 0 calc(100% - 16px);
+  }
+
+  .vs-card iframe {
+    height: 70vh !important;
+  }
+}
+
+/* =========================
+   SMALL MOBILE ≤ 576px
+========================= */
+@media (max-width: 576px) {
+  .testimonial-page .hero-navbar {
+    height: 64px;
+  }
+
+  .ts-page-hero {
+    min-height: 38vh;
+    padding: 44px 16px;
+  }
+
+  .ts-page-eyebrow {
+    font-size: 0.6rem;
+    margin-bottom: 14px;
+  }
+
+  .ts-page-hero-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================
+   EXTRA-SMALL ≤ 480px
+========================= */
+@media (max-width: 480px) {
+  .testimonial-page .hero-navbar {
+    height: 74px;
+  }
+
+  .ts-page-hero {
+    min-height: 34vh;
+    padding: 38px 14px;
+  }
+
+  .ts-page-hero-content p {
+    font-size: 0.82rem;
+  }
+}
+
+/* =========================
+   ULTRA-SMALL ≤ 380px (320-380)
+========================= */
+@media (max-width: 380px) {
+  .testimonial-page .hero-navbar {
+    height: 64px;
+  }
+
+  .ts-page-hero {
+    min-height: 30vh;
+    padding: 32px 12px;
+  }
+
+  .ts-page-eyebrow {
+    font-size: 0.55rem;
+    padding: 5px 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .ts-page-hero-content p {
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+}

@@ -1,0 +1,603 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.v-hero {
+  background: #071d33;
+  position: relative;
+  overflow: hidden;
+
+  min-height: 700px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 160px 5% 80px !important;
+}
+
+.v-hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.section-title-white {
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+
+.section-title-white .accent {
+  color: #915be5;
+}
+
+.v-hero-sub {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #b8c6d8;
+  max-width: 650px;
+  margin-bottom: 40px;
+}
+
+.v-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+
+  padding: 12px 24px;
+  border-radius: 50px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+
+  color: #d9b88c;
+  font-size: 15px;
+  margin-bottom: 60px;
+}
+
+.v-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+}
+
+.v-stat {
+  padding: 50px 30px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.v-stat:last-child {
+  border-right: none;
+}
+
+.v-stat-num {
+  display: block;
+  font-size: 58px;
+  font-weight: 700;
+  color: #8f5ae3;
+  margin-bottom: 12px;
+}
+
+.v-stat-label {
+  color: #b8c6d8;
+  font-size: 16px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .v-hero {
+    padding: 140px 30px 70px !important;
+    min-height: auto;
+  }
+
+  .v-stat-num {
+    font-size: 42px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .v-hero {
+    padding: 120px 20px 60px !important;
+    text-align: center;
+  }
+
+  .v-hero-sub {
+    font-size: 16px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .v-pill {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .v-stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .v-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .v-stat:last-child {
+    border-bottom: none;
+  }
+
+  .v-stat-num {
+    font-size: 38px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .v-hero {
+    padding: 110px 15px 50px !important;
+  }
+
+  .v-hero-sub {
+    font-size: 15px;
+  }
+
+  .v-pill {
+    width: 100%;
+    justify-content: center;
+    font-size: 13px;
+    padding: 10px 15px;
+  }
+
+  .v-stat {
+    padding: 30px 15px;
+  }
+
+  .v-stat-num {
+    font-size: 32px;
+  }
+
+  .v-stat-label {
+    font-size: 14px;
+  }
+}
+/* =========================
+   WHY VOORA
+========================= */
+
+.v-section {
+  padding: 100px 6%;
+  background: #f7f7f5;
+}
+
+.v-section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #9b978f;
+  margin-bottom: 20px;
+}
+
+.v-section-headline {
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111827;
+  margin-bottom: 30px;
+  max-width: 650px;
+}
+
+.v-section-sub {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #666;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.v-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.v-pillar {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 24px;
+  padding: 32px;
+  transition: all 0.35s ease;
+}
+
+.v-pillar:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.v-pillar-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #071d33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-size: 24px;
+}
+
+.v-pillar-title {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.v-pillar-body {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #666;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .v-pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .v-section-headline {
+    font-size: 52px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .v-section {
+    padding: 70px 20px;
+  }
+
+  .v-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .v-section-headline {
+    font-size: 42px;
+  }
+
+  .v-section-sub {
+    font-size: 16px;
+  }
+
+  .v-pillar {
+    padding: 24px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .v-section-headline {
+    font-size: 34px;
+  }
+
+  .v-pillar-title {
+    font-size: 20px;
+  }
+
+  .v-pillar-body {
+    font-size: 15px;
+  }
+}
+/* =========================
+   JOIN THE TEAM
+========================= */
+
+.v-form-wrap {
+  padding: 75px 5%;
+  background: #f7f7f5;
+}
+
+.v-form {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.v-section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #9b978f;
+  margin-bottom: 15px;
+}
+
+.v-section-headline {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.v-section-sub {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #666;
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.v-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.v-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.v-field--full {
+  grid-column: 1 / -1;
+}
+
+.v-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.v-label-optional {
+  color: #999;
+  font-weight: 400;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.v-input,
+.v-select {
+  width: 100%;
+  height: 58px;
+  border: 1px solid #e4e4e4;
+  border-radius: 14px;
+  background: #fff;
+  padding: 0 18px;
+  font-size: 15px;
+  transition: all .3s ease;
+}
+
+.v-input:focus,
+.v-select:focus {
+  outline: none;
+  border-color: #bf953f;
+  box-shadow: 0 0 0 4px rgba(191,149,63,.15);
+}
+
+.v-textarea {
+  min-height: 140px;
+  resize: none;
+  padding: 18px;
+}
+
+/* =========================
+   UPLOAD BOX
+========================= */
+
+.v-upload-zone {
+  border: 2px dashed #dcdcdc;
+  border-radius: 16px;
+  padding: 50px 20px;
+  text-align: center;
+  background: #fafafa;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.v-upload-zone:hover {
+  border-color: #bf953f;
+  background: #faf7f0;
+}
+
+.v-upload-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.v-upload-text {
+  font-size: 18px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.v-upload-link {
+  color: #bf953f;
+  font-weight: 600;
+}
+
+.v-upload-hint {
+  font-size: 14px;
+  color: #777;
+}
+
+.v-file-name {
+  margin-top: 15px;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.v-btn-primary {
+  width: 100%;
+  height: 64px;
+  border: none;
+  border-radius: 16px;
+  margin-top: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #071d33 0%,
+    #102b4a 100%
+  );
+
+  color: #d9b88c;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.v-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(7,29,51,.2);
+}
+
+/* =========================
+   SUCCESS CARD
+========================= */
+
+.v-success {
+  background: #fff;
+  padding: 60px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.v-success-icon {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  background: #071d33;
+  color: #d9b88c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+}
+
+.v-success-title {
+  font-size: 32px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.v-success-body {
+  color: #666;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .v-form-wrap {
+    padding: 70px 20px;
+  }
+
+  .v-form {
+    padding: 25px;
+  }
+
+  .v-section-headline {
+    font-size: 40px;
+  }
+
+  .v-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .v-upload-zone {
+    padding: 40px 15px;
+  }
+
+  .v-btn-primary {
+    height: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .v-section-headline {
+    font-size: 32px;
+  }
+
+  .v-section-sub {
+    font-size: 15px;
+  }
+
+  .v-input,
+  .v-select {
+    height: 54px;
+  }
+}

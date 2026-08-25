@@ -1,0 +1,1236 @@
+/* =========================
+   BASE (Desktop First)
+========================= */
+
+.services {
+  background: var(--grad-soft);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 75px 5%;
+}
+
+.services>.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   CONSTRUCTION / BUILDING BACKGROUND ANIMATION (REFINED)
+========================================================= */
+.services-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ----- Ambient depth gradient (creates a sense of horizon) ----- */
+.services-bg-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 110%, rgba(184, 134, 11, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 0%, rgba(184, 134, 11, 0.025) 70%, rgba(70, 50, 20, 0.05) 100%);
+}
+
+/* ----- Soft breathing gold glow (premium ambient light) ----- */
+.services-bg-glow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 55%;
+  height: 80%;
+  background: radial-gradient(circle at center, rgba(245, 230, 169, 0.15) 0%, rgba(212, 175, 55, 0.05) 35%, transparent 65%);
+  filter: blur(40px);
+  animation: svAmbientBreathe 12s ease-in-out infinite;
+}
+
+/* ----- Architectural blueprint grid (slow drift + fade in/out) ----- */
+.services-bg-grid {
+  position: absolute;
+  inset: -2px;
+  background-image:
+    linear-gradient(rgba(184, 134, 11, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 134, 11, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(184, 134, 11, 0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 134, 11, 0.085) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px, 96px 96px, 96px 96px;
+  animation: svGridDrift 48s linear infinite;
+  mask-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 18%,
+      rgba(0, 0, 0, 0.6) 78%,
+      rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.3) 100%);
+  -webkit-mask-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 18%,
+      rgba(0, 0, 0, 0.6) 78%,
+      rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.3) 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+/* ----- Slow scanner line (architectural draft being drawn) ----- */
+.services-bg-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(212, 175, 55, 0) 15%,
+      rgba(245, 230, 169, 0.6) 40%,
+      rgba(255, 244, 194, 0.85) 50%,
+      rgba(245, 230, 169, 0.6) 60%,
+      rgba(212, 175, 55, 0) 85%,
+      transparent 100%);
+  box-shadow: 0 0 12px rgba(245, 230, 169, 0.45);
+  opacity: 0.7;
+  animation: svScan 14s ease-in-out infinite;
+}
+
+/* ----- Skyline silhouettes ----- */
+.services-bg-skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.services-bg-skyline--far {
+  height: 110px;
+  opacity: 0.18;
+  filter: blur(0.4px);
+  z-index: 1;
+}
+
+.services-bg-skyline--near {
+  height: 160px;
+  opacity: 0.32;
+  z-index: 2;
+}
+
+.sv-b {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(70, 50, 20, 0.9) 0%, rgba(30, 22, 8, 1) 100%);
+  border-top: 1px solid rgba(212, 175, 55, 0.55);
+  box-shadow: inset 0 -12px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Antenna on tall buildings */
+.sv-b::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 1px;
+  height: 10px;
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* Window grid */
+.sv-b::before {
+  content: "";
+  position: absolute;
+  inset: 10px 8px 14px 8px;
+  background-image: radial-gradient(circle, rgba(245, 230, 169, 0.7) 1px, transparent 1.6px);
+  background-size: 12px 16px;
+  opacity: 0.5;
+  animation: svWindowFlicker 5s ease-in-out infinite;
+}
+
+/* Near skyline (foreground) */
+.sv-b-1 {
+  left: 5%;
+  width: 56px;
+  height: 92px;
+  animation: svBuildingRise 11s ease-in-out infinite;
+}
+
+.sv-b-2 {
+  left: 22%;
+  width: 82px;
+  height: 140px;
+  animation: svBuildingRise 12s ease-in-out infinite 1.2s;
+}
+
+.sv-b-3 {
+  left: 55%;
+  width: 68px;
+  height: 108px;
+  animation: svBuildingRise 10.5s ease-in-out infinite 2.4s;
+}
+
+.sv-b-4 {
+  left: 80%;
+  width: 78px;
+  height: 130px;
+  animation: svBuildingRise 11.5s ease-in-out infinite 3.6s;
+}
+
+/* Far skyline (distant, smaller, blurred) */
+.sv-bf-1 {
+  left: 14%;
+  width: 40px;
+  height: 64px;
+}
+
+.sv-bf-2 {
+  left: 32%;
+  width: 50px;
+  height: 88px;
+}
+
+.sv-bf-3 {
+  left: 60%;
+  width: 44px;
+  height: 72px;
+}
+
+.sv-bf-4 {
+  left: 88%;
+  width: 36px;
+  height: 60px;
+}
+
+.services-bg-skyline--far .sv-b::after {
+  display: none;
+}
+
+/* ----- Refined Crane (top-right) ----- */
+.services-bg-crane {
+  position: absolute;
+  top: 36px;
+  right: 7%;
+  width: 6px;
+  height: 230px;
+  opacity: 0.32;
+  z-index: 1;
+}
+
+.sv-crane-base {
+  position: absolute;
+  bottom: 0;
+  left: -8px;
+  width: 22px;
+  height: 10px;
+  background: linear-gradient(180deg, #5a3f04 0%, #2b1d02 100%);
+  border-radius: 2px;
+}
+
+.sv-crane-mast {
+  position: absolute;
+  inset: 0 0 10px 0;
+  background:
+    linear-gradient(180deg, rgba(184, 134, 11, 0.95) 0%, rgba(90, 63, 4, 1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sv-crane-mast-x {
+  width: 16px;
+  height: 1px;
+  background: rgba(90, 63, 4, 0.9);
+  position: relative;
+  margin-left: -5px;
+}
+
+.sv-crane-mast-x::before,
+.sv-crane-mast-x::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(90, 63, 4, 0.9);
+  transform-origin: center;
+}
+
+.sv-crane-mast-x::before {
+  transform: rotate(35deg);
+}
+
+.sv-crane-mast-x::after {
+  transform: rotate(-35deg);
+}
+
+.sv-crane-cabin {
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 12px;
+  height: 8px;
+  background: linear-gradient(180deg, #B8860B 0%, #5a3f04 100%);
+  border-radius: 1px;
+}
+
+.sv-crane-rotor {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 0;
+  height: 0;
+  transform-origin: center;
+  animation: svCraneSwing 11s ease-in-out infinite;
+}
+
+.sv-crane-arm {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 168px;
+  height: 3px;
+  background: linear-gradient(90deg, #5a3f04 0%, #B8860B 50%, #D4AF37 100%);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.sv-crane-arm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 12px, rgba(90, 63, 4, 0.5) 12px 13px);
+}
+
+.sv-crane-counter {
+  position: absolute;
+  top: -3px;
+  left: -36px;
+  width: 30px;
+  height: 9px;
+  background: linear-gradient(180deg, #5a3f04 0%, #2b1d02 100%);
+  border-radius: 1px;
+}
+
+.sv-crane-cable {
+  position: absolute;
+  top: 0;
+  left: 152px;
+  width: 1px;
+  height: 70px;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.7) 0%, rgba(90, 63, 4, 0.7) 100%);
+  transform-origin: top center;
+  animation: svCableDrop 11s ease-in-out infinite;
+}
+
+.sv-crane-hook {
+  position: absolute;
+  top: 70px;
+  left: 148px;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%);
+  border-radius: 1px;
+  box-shadow: 0 0 4px rgba(245, 230, 169, 0.6);
+  animation: svHookDrop 11s ease-in-out infinite;
+}
+
+/* ----- Architectural blueprint marks ----- */
+.services-bg-blueprint {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.sv-bp {
+  position: absolute;
+  border: 1px solid rgba(184, 134, 11, 0.85);
+  border-radius: 2px;
+}
+
+.sv-bp::before,
+.sv-bp::after {
+  content: "";
+  position: absolute;
+  background: rgba(184, 134, 11, 0.85);
+}
+
+/* tick marks like a technical drawing */
+.sv-bp::before {
+  top: -4px;
+  left: 50%;
+  width: 1px;
+  height: 4px;
+}
+
+.sv-bp::after {
+  bottom: -4px;
+  left: 50%;
+  width: 1px;
+  height: 4px;
+}
+
+.sv-bp-1 {
+  top: 18%;
+  left: 7%;
+  width: 70px;
+  height: 46px;
+  animation: svBpFloat 18s ease-in-out infinite;
+}
+
+.sv-bp-2 {
+  top: 62%;
+  left: 36%;
+  width: 100px;
+  height: 56px;
+  animation: svBpFloat 22s ease-in-out infinite 3s;
+}
+
+/* Architect's ruler */
+.sv-ruler {
+  position: absolute;
+  top: 12%;
+  right: 24%;
+  width: 110px;
+  height: 14px;
+  border: 1px solid rgba(184, 134, 11, 0.8);
+  border-radius: 1px;
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0 9px,
+      rgba(184, 134, 11, 0.45) 9px 10px),
+    repeating-linear-gradient(90deg,
+      transparent 0 18px,
+      rgba(184, 134, 11, 0.7) 18px 20px);
+  background-size: 100% 6px, 100% 14px;
+  background-position: 0 8px, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  animation: svRulerSway 20s ease-in-out infinite;
+}
+
+/* ----- Floating gold particles ----- */
+.services-bg-dust {
+  position: absolute;
+  inset: 0;
+}
+
+.services-bg-dust span {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 244, 194, 0.75) 0%, rgba(212, 175, 55, 0) 70%);
+  filter: blur(0.6px);
+}
+
+.services-bg-dust span:nth-child(1) {
+  left: 12%;
+  width: 5px;
+  height: 5px;
+  animation: svDustRise 22s linear infinite;
+}
+
+.services-bg-dust span:nth-child(2) {
+  left: 28%;
+  width: 3px;
+  height: 3px;
+  animation: svDustRise 28s linear infinite 4s;
+}
+
+.services-bg-dust span:nth-child(3) {
+  left: 44%;
+  width: 4px;
+  height: 4px;
+  animation: svDustRise 25s linear infinite 7s;
+}
+
+.services-bg-dust span:nth-child(4) {
+  left: 60%;
+  width: 5px;
+  height: 5px;
+  animation: svDustRise 26s linear infinite 2s;
+}
+
+.services-bg-dust span:nth-child(5) {
+  left: 78%;
+  width: 3px;
+  height: 3px;
+  animation: svDustRise 23s linear infinite 10s;
+}
+
+.services-bg-dust span:nth-child(6) {
+  left: 90%;
+  width: 4px;
+  height: 4px;
+  animation: svDustRise 27s linear infinite 5s;
+}
+
+/* ----- Welding sparks bursting from a building ----- */
+.services-bg-weld {
+  position: absolute;
+  bottom: 86px;
+  left: calc(22% + 30px);
+  width: 4px;
+  height: 4px;
+  z-index: 3;
+}
+
+.sv-flash {
+  position: absolute;
+  inset: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFDE7 0%, #FFF4C2 30%, rgba(255, 244, 194, 0) 70%);
+  filter: blur(1px);
+  animation: svWeldFlash 2.4s ease-in-out infinite;
+}
+
+.sv-spark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #FFF4C2;
+  box-shadow: 0 0 4px #FFF4C2;
+  opacity: 0;
+}
+
+.sv-spark-1 {
+  animation: svSparkFly1 2.4s ease-out infinite;
+}
+
+.sv-spark-2 {
+  animation: svSparkFly2 2.4s ease-out infinite 0.4s;
+}
+
+.sv-spark-3 {
+  animation: svSparkFly3 2.4s ease-out infinite 0.8s;
+}
+
+.sv-spark-4 {
+  animation: svSparkFly4 2.4s ease-out infinite 1.2s;
+}
+
+.sv-spark-5 {
+  animation: svSparkFly5 2.4s ease-out infinite 1.6s;
+}
+
+/* ----- Construction truck driving across ----- */
+.services-bg-truck {
+  position: absolute;
+  bottom: 14px;
+  left: -180px;
+  width: 130px;
+  height: 36px;
+  z-index: 3;
+  opacity: 0.55;
+  animation: svTruckDrive 18s linear infinite;
+}
+
+.sv-truck-body {
+  position: absolute;
+  left: 40px;
+  bottom: 8px;
+  width: 90px;
+  height: 18px;
+  background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%);
+  border: 1px solid rgba(90, 63, 4, 0.6);
+  border-radius: 2px;
+}
+
+.sv-truck-cab {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 38px;
+  height: 26px;
+  background: linear-gradient(180deg, #B8860B 0%, #8b6508 100%);
+  border: 1px solid rgba(90, 63, 4, 0.6);
+  border-radius: 4px 6px 2px 2px;
+}
+
+.sv-truck-window {
+  position: absolute;
+  left: 6px;
+  bottom: 18px;
+  width: 24px;
+  height: 12px;
+  background: linear-gradient(180deg, rgba(255, 244, 194, 0.85) 0%, rgba(212, 175, 55, 0.45) 100%);
+  border-radius: 2px 4px 0 0;
+}
+
+.sv-truck-load {
+  position: absolute;
+  left: 48px;
+  bottom: 26px;
+  width: 78px;
+  height: 8px;
+  background:
+    repeating-linear-gradient(90deg, #5a3f04 0 6px, #B8860B 6px 12px);
+  border-radius: 1px;
+  animation: svTruckBump 0.6s ease-in-out infinite;
+}
+
+.sv-truck-wheel {
+  position: absolute;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #2b1d02 25%, #5a3f04 26%, #5a3f04 50%, #2b1d02 51%);
+  border-radius: 50%;
+  animation: svWheelSpin 0.6s linear infinite;
+}
+
+.sv-truck-wheel-1 {
+  left: 8px;
+}
+
+.sv-truck-wheel-2 {
+  left: 56px;
+}
+
+.sv-truck-wheel-3 {
+  left: 96px;
+}
+
+/* ----- Drifting smoke puffs ----- */
+.services-bg-smoke {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.services-bg-smoke span {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 244, 194, 0.35) 0%, rgba(212, 175, 55, 0) 70%);
+  filter: blur(6px);
+  opacity: 0;
+}
+
+.services-bg-smoke span:nth-child(1) {
+  left: 5%;
+  animation: svSmokeDrift 9s ease-out infinite;
+}
+
+.services-bg-smoke span:nth-child(2) {
+  left: 50%;
+  animation: svSmokeDrift 11s ease-out infinite 3s;
+}
+
+.services-bg-smoke span:nth-child(3) {
+  left: 80%;
+  animation: svSmokeDrift 10s ease-out infinite 6s;
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+@keyframes svGridDrift {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 16px 16px, 16px 16px, 96px 96px, 96px 96px;
+  }
+}
+
+@keyframes svAmbientBreathe {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes svScan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.85;
+  }
+
+  92% {
+    opacity: 0.85;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes svBuildingRise {
+
+  0%,
+  100% {
+    transform: translateY(4px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes svWindowFlicker {
+
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes svCraneSwing {
+
+  0%,
+  100% {
+    transform: rotate(-12deg);
+  }
+
+  50% {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes svCableDrop {
+
+  0%,
+  100% {
+    height: 50px;
+  }
+
+  50% {
+    height: 100px;
+  }
+}
+
+@keyframes svHookDrop {
+
+  0%,
+  100% {
+    top: 50px;
+  }
+
+  50% {
+    top: 100px;
+  }
+}
+
+@keyframes svBpFloat {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: translate(6px, -8px) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+@keyframes svRulerSway {
+
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes svDustRise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes svWeldFlash {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  5% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  15% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  20% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
+
+  30% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes svSparkFly1 {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(20px, -22px);
+  }
+}
+
+@keyframes svSparkFly2 {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-18px, -20px);
+  }
+}
+
+@keyframes svSparkFly3 {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(26px, -10px);
+  }
+}
+
+@keyframes svSparkFly4 {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-22px, -14px);
+  }
+}
+
+@keyframes svSparkFly5 {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(14px, -26px);
+  }
+}
+
+@keyframes svTruckDrive {
+  0% {
+    left: -180px;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes svTruckBump {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes svWheelSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes svSmokeDrift {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(80px, -120px) scale(2.5);
+  }
+}
+
+/* --- Reduce-motion --- */
+@media (prefers-reduced-motion: reduce) {
+
+  .services-bg-grid,
+  .services-bg-glow,
+  .services-bg-scan,
+  .services-bg-truck,
+  .sv-truck-load,
+  .sv-truck-wheel,
+  .sv-flash,
+  .sv-spark,
+  .services-bg-smoke span,
+  .sv-b,
+  .sv-b::before,
+  .sv-crane-rotor,
+  .sv-crane-cable,
+  .sv-crane-hook,
+  .sv-bp,
+  .sv-ruler,
+  .services-bg-dust span {
+    animation: none !important;
+  }
+}
+
+/* --- Mobile: simplify --- */
+@media (max-width: 768px) {
+  .services-bg-skyline--near {
+    height: 110px;
+    opacity: 0.22;
+  }
+
+  .services-bg-skyline--far {
+    display: none;
+  }
+
+  .sv-b-2 {
+    display: none;
+  }
+
+  .services-bg-crane {
+    display: none;
+  }
+
+  .services-bg-truck {
+    transform: scale(0.7);
+    transform-origin: left bottom;
+  }
+
+  .services-bg-weld {
+    display: none;
+  }
+
+  .sv-ruler {
+    display: none;
+  }
+
+  .sv-bp-2 {
+    display: none;
+  }
+
+  .services-bg-grid {
+    background-size: 12px 12px, 12px 12px, 64px 64px, 64px 64px;
+  }
+
+  .services-bg-dust span:nth-child(n+5) {
+    display: none;
+  }
+}
+
+/* Typewriter eyebrow */
+.services .typing-text {
+  font-weight: 600;
+  display: inline-flex;
+  gap: 4px;
+}
+
+.services .typing-text .cursor {
+  animation: servicesBlink 0.8s infinite;
+}
+
+@keyframes servicesBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.services-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 46px;
+}
+
+.services-head .thin {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.br-only {
+  display: none;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+/* CARD */
+.service-card {
+  padding: 30px 26px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid #bf953f;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ICON */
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  color: #bf953f;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 22px rgb(155 121 208 / 30%);
+}
+
+/* TEXT */
+.service-card h3 {
+  font-size: 1.18rem;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: #3c364e;
+  font-size: 0.88rem;
+  margin-bottom: 18px;
+}
+
+/* LINK */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--purple-600);
+}
+
+/* =========================
+   TABLET (<= 980px)
+========================= */
+
+@media (max-width: 980px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .service-card {
+    padding: 26px 22px;
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================
+   SMALL TABLET / MOBILE LANDSCAPE (<= 760px)
+========================= */
+
+@media (max-width: 760px) {
+  .services-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .services-head h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .btn.btn-outline {
+    text-align: center;
+  }
+
+  .service-card {
+    padding: 22px 18px;
+  }
+}
+
+/* =========================
+   MOBILE (<= 480px)
+========================= */
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .services-head h2 {
+    font-size: 1.4rem;
+  }
+
+  .service-card {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+  }
+
+  .service-link {
+    font-size: 0.82rem;
+  }
+}
+
+/* =========================
+   EXTRA SMALL (<= 360px)
+========================= */
+
+@media (max-width: 360px) {
+  .services-head h2 {
+    font-size: 1.25rem;
+  }
+
+  .service-card {
+    padding: 18px 14px;
+  }
+}
+
+/* =========================
+   SCROLL REVEAL BASE STATE
+   Matches both .active (local) and .is-visible (global useReveal hook)
+========================= */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  will-change: transform, opacity;
+}
+
+[data-reveal="left"] {
+  transform: translateX(-60px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(60px);
+}
+
+[data-reveal="zoom"] {
+  transform: scale(0.92);
+}
+
+/* Either class makes the element visible */
+[data-reveal].active,
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.service-card.active,
+.service-card.is-visible {
+  transform: translateY(0);
+}
+
+.service-card {
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.6s ease,
+    opacity 0.6s ease;
+}
+
+/* Safety net: if JS observer fails or animation is interrupted,
+   never leave content invisible on mobile — show it anyway */
+@media (max-width: 768px) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

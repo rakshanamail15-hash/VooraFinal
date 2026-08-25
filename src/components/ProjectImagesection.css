@@ -1,0 +1,310 @@
+/* =========================================================
+   CONSTRUCTION / BUILDING BACKGROUND ANIMATION (REFINED)
+========================================================= */
+.services-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ----- Ambient depth gradient (creates a sense of horizon) ----- */
+.services-bg-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 110%, rgba(184, 134, 11, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 0%, rgba(184, 134, 11, 0.025) 70%, rgba(70, 50, 20, 0.05) 100%);
+}
+
+/* ----- Soft breathing gold glow (premium ambient light) ----- */
+.services-bg-glow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 55%;
+  height: 80%;
+  background: radial-gradient(circle at center, rgba(245, 230, 169, 0.15) 0%, rgba(212, 175, 55, 0.05) 35%, transparent 65%);
+  filter: blur(40px);
+  animation: svAmbientBreathe 12s ease-in-out infinite;
+}
+
+/* ----- Architectural blueprint grid (slow drift + fade in/out) ----- */
+.services-bg-grid {
+  position: absolute;
+  inset: -2px;
+  background-image:
+    linear-gradient(rgba(184, 134, 11, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 134, 11, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(184, 134, 11, 0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 134, 11, 0.085) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px, 96px 96px, 96px 96px;
+  animation: svGridDrift 48s linear infinite;
+  mask-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 18%,
+      rgba(0, 0, 0, 0.6) 78%,
+      rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.3) 100%);
+  -webkit-mask-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 18%,
+      rgba(0, 0, 0, 0.6) 78%,
+      rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.3) 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+/* ----- Slow scanner line (architectural draft being drawn) ----- */
+.services-bg-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(212, 175, 55, 0) 15%,
+      rgba(245, 230, 169, 0.6) 40%,
+      rgba(255, 244, 194, 0.85) 50%,
+      rgba(245, 230, 169, 0.6) 60%,
+      rgba(212, 175, 55, 0) 85%,
+      transparent 100%);
+  box-shadow: 0 0 12px rgba(245, 230, 169, 0.45);
+  opacity: 0.7;
+  animation: svScan 14s ease-in-out infinite;
+}
+
+/* ----- Skyline silhouettes ----- */
+.services-bg-skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.services-bg-skyline--far {
+  height: 110px;
+  opacity: 0.18;
+  filter: blur(0.4px);
+  z-index: 1;
+}
+
+.services-bg-skyline--near {
+  height: 160px;
+  opacity: 0.32;
+  z-index: 2;
+}
+
+
+.explore-section {
+  position: relative;
+  padding: 75px 5%;
+  /* background: #faf8f5; */
+}
+
+.explore-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(380px, 600px));
+  justify-content: center;
+  gap: 24px;
+}
+
+.explore-card {
+  position: relative;
+  height: 320px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+}
+
+.explore-card:hover .explore-image {
+  transform: scale(1.08);
+}
+
+.explore-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeImage 0.8s ease;
+  transition: transform 1s ease;
+}
+
+@keyframes fadeImage {
+  from {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.explore-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.25),
+      transparent);
+  border: 1px solid #bf953f
+}
+
+.explore-heading {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.explore-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(191, 149, 63, 0.08);
+  border: 1px solid rgba(191, 149, 63, 0.25);
+  color: #bf953f;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+
+
+
+
+.typing-text {
+  min-height: 32px;
+  font-size: 1.15rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.cursor {
+  color: #bf953f;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.explore-content {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  color: #fff;
+}
+
+
+
+.explore-content span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+@media (max-width: 1024px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+    margin: auto;
+  }
+
+  .explore-card {
+    height: 320px;
+  }
+} 
+
+@media (max-width: 768px) {
+ 
+.explore-section {
+  position: relative;
+  padding: 36px 5%;
+  background: #faf8f5;
+}
+  .explore-card {
+    height: 260px;
+    border-radius: 20px;
+  }
+
+  .explore-content {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+
+
+  .explore-content span {
+    font-size: 13px;
+  }
+}
+
+/* Keyframe animations for the architectural blueprint background */
+@keyframes svGridDrift {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 16px 16px, 16px 16px, 96px 96px, 96px 96px;
+  }
+}
+
+@keyframes svAmbientBreathe {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes svScan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.85;
+  }
+
+  92% {
+    opacity: 0.85;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}

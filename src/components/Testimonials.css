@@ -1,0 +1,870 @@
+/* =========================
+   VIDEO SECTION
+========================= */
+
+/* Purple typewriter eyebrow */
+.ts-typing-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a79abe;
+  margin-bottom: 10px;
+}
+
+.ts-cursor {
+  display: inline-block;
+  color: #935ce9;
+  font-weight: 400;
+  animation: tsCursorBlink 0.75s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes tsCursorBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+
+
+.video-section {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.video-head {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.video-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  width: 100%;
+  height: 400px;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 20px;
+}
+
+.video-item {
+  min-width: 50%;
+  padding: 0 10px;
+}
+
+@media(max-width:991px) {
+  .video-item {
+    min-width: 100%;
+  }
+
+  .video-card {
+    height: 250px;
+  }
+}
+
+.video-head span {
+  display: inline-block;
+  color: #FFD700;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.video-head h2 {
+  font-size: 40px;
+  margin: 0;
+  color: #111;
+}
+
+.video-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.video-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+
+.video-item {
+  flex: 0 0 50%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.video-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #000;
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 25px;
+
+  background: linear-gradient(transparent,
+      rgba(0, 0, 0, .85));
+}
+
+.video-overlay h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+}
+
+/* =========================
+   ARROWS
+========================= */
+
+.video-nav {
+  position: absolute;
+  top: 58%;
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fff;
+  color: #111;
+
+  cursor: pointer;
+
+  font-size: 24px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, .15);
+
+  z-index: 10;
+}
+
+.video-prev {
+  left: -25px;
+}
+
+.video-next {
+  right: -25px;
+}
+
+.video-nav:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .video-card iframe {
+    height: 300px;
+  }
+
+  .video-head h2 {
+    font-size: 30px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:991px) {
+
+  .video-item {
+    flex: 0 0 100%;
+  }
+
+  /* Track keeps its inline transform so the arrow buttons actually move it.
+     (Old rule that forced `transform: none !important` was breaking the slider.) */
+
+  .video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .video-head h2 {
+    font-size: 24px;
+  }
+
+  .video-section {
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+  }
+
+  .video-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    z-index: 12;
+    top: auto;
+    bottom: 5px;
+    transform: none;
+    border: 1px solid #935ce9;
+    background: #ffffff;
+    color: #935ce9;
+    box-shadow: none;
+  }
+
+  .video-nav:hover:not(:disabled) {
+    background: #935ce9;
+    color: #FFD700;
+  }
+
+  .video-prev {
+    left: calc(50% - 50px);
+  }
+
+  .video-next {
+    right: auto;
+    left: calc(50% + 6px);
+  }
+}
+
+/* =========================
+   ULTRA-SMALL ≤ 480px — arrows still visible, slightly smaller
+========================= */
+@media (max-width: 480px) {
+  .video-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    bottom: 8px;
+  }
+
+  .video-prev {
+    left: calc(50% - 44px);
+  }
+
+  .video-next {
+    left: calc(50% + 6px);
+  }
+}
+
+.video-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.video-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+
+.video-item {
+  flex: 0 0 50%;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+}
+
+@media(max-width:991px) {
+  .video-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .video-card iframe {
+    width: 100% !important;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+  }
+
+  .video-item {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ===========================
+   TESTIMONIALS — PROFESSIONAL
+=========================== */
+
+.testimonials {
+  background: #fafafa;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.customertestimonial {
+  background: #fafafa;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.customertestimonial>.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   TESTIMONIALS — BACKGROUND LAYERS
+========================================================= */
+.ts-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Soft depth gradient */
+.ts-bg-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 110%, rgba(184, 134, 11, 0.07) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 0%, rgba(184, 134, 11, 0.02) 70%, rgba(70, 50, 20, 0.04) 100%);
+}
+
+/* Breathing gold glow top-right */
+.ts-bg-glow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 55%;
+  height: 80%;
+  background: radial-gradient(circle at center, rgba(245, 230, 169, 0.14) 0%, rgba(212, 175, 55, 0.04) 35%, transparent 65%);
+  filter: blur(40px);
+  animation: tsBgBreathe 12s ease-in-out infinite;
+}
+
+/* Architectural blueprint grid */
+.ts-bg-grid {
+  position: absolute;
+  inset: -2px;
+  background-image:
+    linear-gradient(rgba(184, 134, 11, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 134, 11, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(184, 134, 11, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 134, 11, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px, 96px 96px, 96px 96px;
+  animation: tsBgGridDrift 48s linear infinite;
+  mask-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 18%, rgba(0, 0, 0, 0.55) 78%, rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.3) 100%);
+  -webkit-mask-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 18%, rgba(0, 0, 0, 0.55) 78%, rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.3) 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+/* Scanner line sweeping top to bottom */
+.ts-bg-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(212, 175, 55, 0) 15%,
+      rgba(245, 230, 169, 0.55) 40%,
+      rgba(255, 244, 194, 0.8) 50%,
+      rgba(245, 230, 169, 0.55) 60%,
+      rgba(212, 175, 55, 0) 85%,
+      transparent 100%);
+  box-shadow: 0 0 10px rgba(245, 230, 169, 0.4);
+  opacity: 0.65;
+  animation: tsBgScan 14s ease-in-out infinite;
+}
+
+/* Keyframes */
+@keyframes tsBgBreathe {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes tsBgGridDrift {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 16px 16px, 16px 16px, 96px 96px, 96px 96px;
+  }
+}
+
+@keyframes tsBgScan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.8;
+  }
+
+  92% {
+    opacity: 0.8;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Reduce-motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .ts-bg-glow,
+  .ts-bg-grid,
+  .ts-bg-scan {
+    animation: none !important;
+  }
+}
+
+/* Keep container above the background */
+.testimonials>.container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* HEAD */
+
+.ts-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.ts-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #FFD700;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.ts-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #935ce9;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.5px;
+}
+
+.ts-subtitle {
+  font-size: 16px;
+  color: #5b6478;
+  line-height: 1.85;
+  max-width: 640px;
+  margin: 0 auto 26px;
+}
+
+.ts-divider {
+  display: inline-block;
+  width: 80px;
+  height: 3px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #FFD700, #FFD700);
+}
+
+/* TRACK */
+
+.ts-viewport {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.ts-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ts-cell {
+  flex: 0 0 calc(100% / 3);
+  padding: 18px;
+}
+
+/* CARD — neat, clean, professional */
+
+.ts-card {
+  position: relative;
+  background: #ffffff;
+  padding: 32px 30px;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.ts-card:hover {
+  transform: translateY(-4px);
+  border-color: #d8d8d8;
+}
+
+/* PERSON BLOCK — TOP OF CARD */
+
+.ts-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ts-avatar {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #f3eeff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #e3e3e3, 0 4px 10px rgba(109, 40, 217, 0.12);
+}
+
+.ts-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 50%;
+}
+
+.ts-person-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ts-person strong {
+  display: block;
+  color: #935ce9;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ts-person span {
+  display: block;
+  font-size: 13px;
+  color: #7a8194;
+  margin-top: 3px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* STARS */
+
+.ts-stars {
+  color: #bf953f;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+/* QUOTE MARK — hidden, not used in new layout */
+
+.ts-quote {
+  display: none;
+}
+
+/* QUOTE TEXT */
+
+.ts-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+  flex-grow: 1;
+}
+
+/* =========================
+   DOTS / NAV — navy + gold palette
+========================= */
+
+.ts-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ARROW BUTTONS */
+
+.ts-dots button {
+  border: 1px solid #935ce9;
+  cursor: pointer;
+  background: #ffffff;
+  color: #935ce9;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: none;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ts-dots button:hover:not(:disabled) {
+  background: #935ce9;
+  color: #FFD700;
+  border-color: #935ce9;
+  transform: translateY(-2px);
+}
+
+.ts-dots button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #c9cfd9;
+  color: #8892a8;
+  background: #ffffff;
+}
+
+/* DOTS */
+
+.dot {
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px;
+  border: none !important;
+  border-radius: 50% !important;
+  background: #c9cfd9 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.dot:hover {
+  background: #935ce9 !important;
+  transform: none !important;
+}
+
+.dot.active {
+  width: 28px !important;
+  border-radius: 20px !important;
+  background: #A16EEF !important;
+}
+
+/* MOBILE TWEAK */
+
+@media(max-width:991px) {
+
+  .ts-dots {
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .ts-dots button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .dot.active {
+    width: 22px !important;
+  }
+}
+
+/* ===========================
+   LAPTOP
+=========================== */
+
+@media (max-width: 1200px) {
+
+  .ts-card {
+    padding: 28px 26px;
+  }
+
+  .ts-cell {
+    padding: 14px;
+  }
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 991px) {
+
+  .testimonials {
+    padding: 36px 0%;
+  }
+
+  .ts-cell {
+    flex: 0 0 50%;
+  }
+
+  .ts-title {
+    font-size: 36px;
+  }
+
+  .ts-head {
+    margin-bottom: 55px;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:991px) {
+
+  .testimonials {
+    padding: 36px 0%;
+  }
+
+  .ts-cell {
+    flex: 0 0 100%;
+    padding: 10px 4px;
+  }
+
+  .ts-card {
+    padding: 26px 22px;
+  }
+
+  .ts-head {
+    margin-bottom: 40px;
+  }
+
+  .ts-title {
+    font-size: 28px;
+  }
+
+  .ts-subtitle {
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  .ts-avatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+
+  .ts-person strong {
+    font-size: 14.5px;
+  }
+
+  .ts-person span {
+    font-size: 12.5px;
+  }
+
+  .ts-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .ts-stars {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width: 420px) {
+
+  .ts-card {
+    padding: 22px 18px;
+  }
+
+  .ts-person {
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  .ts-title {
+    font-size: 24px;
+  }
+}

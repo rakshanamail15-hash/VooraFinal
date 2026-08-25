@@ -1,0 +1,778 @@
+/* ============================================================
+   ARKHE — Global styles, design tokens & animations
+   ============================================================ */
+@import url('https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css');
+@import url('https://fonts.googleapis.com/css2?family=Qwigley&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: "Dantina";
+  src: url("../src/assets/fonts/Dantina.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.section-title .accent {
+  color: var(--purple-500);
+  font-family: "Dantina", cursive;
+  font-weight: 300;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.section-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 36px;
+  font-weight: 400 !important;
+  line-height: 1.3;
+  color: #111111;
+  margin-bottom: 20px;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-dark {
+  color: #000 !important;
+}
+
+.heading-main p {
+  text-align: justify;
+}
+
+.accent {
+  color: var(--purple-500);
+  font-family: "Dantina", cursive;
+  font-weight: 300;
+  margin-bottom: 8px;
+  font-size: 22px;
+
+}
+
+:root {
+  /* Brand palette — only 2 brand colors site-wide (footer excluded) */
+  --brand-purple: #935ce9;
+  --brand-gold: #FFD700;
+
+  --purple-900: #935ce9;
+  --purple-800: #935ce9;
+  --purple-700: #935ce9;
+  --purple-600: #A16EEF;
+  --purple-500: #A16EEF;
+
+  --purple-400: #935ce9;
+  --purple-300: #935ce9;
+  --purple-200: #935ce9;
+  --purple-100: #ede9fe;
+  --purple-50: #f5f3ff;
+
+  --ink: #1b1430;
+  --ink-soft: #4b4564;
+  --muted: #8b8499;
+  --line: #ece8f5;
+  --white: #ffffff;
+  --cream: #faf8ff;
+
+  --grad-purple: #A16EEF;
+  --grad-hero: linear-gradient(135deg, #935ce9 0%, #935ce9 45%, #935ce9 100%);
+  --grad-soft: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%);
+
+  /* --shadow-sm: 0 4px 14px rgba(91, 33, 182, 0.06);
+  --shadow-md: 0 14px 40px rgba(91, 33, 182, 0.12);
+  --shadow-lg: 0 26px 70px rgba(43, 16, 85, 0.20); */
+
+  --radius-sm: 12px;
+  --radius: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 36px;
+
+  --container: 1240px;
+  --font-head: "Montserrat", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* scroll-behavior removed for JS marquee */
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 36px 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 36px 5%;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 36px 5%;
+  }
+}
+
+@media (max-width: 380px) {
+  .section {
+    padding: 36px 5%;
+  }
+}
+
+
+/* short accent underline ~15% of the label width */
+.eyebrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  min-width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--grad-purple);
+  transform-origin: left center;
+  animation: ebLine 0.7s var(--ease) both;
+}
+
+.eyebrow.light::after {
+  background: linear-gradient(135deg, #935ce9, #8453d2);
+}
+
+@keyframes ebLine {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.feature {
+  display: flex;
+  padding: 0px 20px;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.feature-icon {
+  font-size: 36px;
+  color: #D4A017;
+  /* match this to your actual brand gold */
+  line-height: 1;
+}
+
+.feature p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.section-title {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  color: var(--ink);
+  letter-spacing: -0.5px;
+}
+
+.section-title .accent {
+  color: var(--purple-500);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--grad-purple);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(109, 40, 217, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(109, 40, 217, 0.45);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--purple-700);
+  border: 1px solid var(--purple-200);
+}
+
+.faq-card summary {
+  font-size: 15px;
+}
+
+.project-plans-description {
+  color: #000;
+  margin-bottom: 3px;
+  font-size: 15px;
+
+}
+
+.masterplan-text {
+  font-size: 15px;
+  margin-bottom: 3px;
+
+}
+
+.btn-ghost:hover {
+  transform: translateY(-3px);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple-600);
+  border: 1.5px solid #bf953f;
+}
+
+.btn-outline:hover {
+  background: var(--purple-500);
+  color: #fff;
+  transform: translateY(-2px);
+  border-color: var(--purple-500);
+}
+
+/* ---------- Pills / tabs ---------- */
+.filter-tabs {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--purple-100);
+  padding: 6px;
+  border-radius: 999px;
+  flex-wrap: wrap;
+}
+
+.filter-tabs button {
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  transition: all 0.3s var(--ease);
+}
+
+.filter-tabs button.active {
+  background: var(--grad-purple);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(109, 40, 217, 0.3);
+}
+
+/* Responsive: keep filter tabs as a single horizontally-scrollable row */
+@media (max-width: 991px) {
+  .filter-tabs {
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-width: 107%;
+    scrollbar-width: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tabs button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 9px 4px;
+  }
+}
+
+/* ---------- Reveal-on-scroll ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal='left'] {
+  transform: translateX(-44px);
+}
+
+[data-reveal='right'] {
+  transform: translateX(44px);
+}
+
+[data-reveal='left'].is-visible,
+[data-reveal='right'].is-visible {
+  transform: translateX(0);
+}
+
+[data-reveal='zoom'] {
+  transform: scale(0.92);
+}
+
+[data-reveal='zoom'].is-visible {
+  transform: scale(1);
+}
+
+/* stagger delays */
+.d1 {
+  transition-delay: 0.08s;
+}
+
+.d2 {
+  transition-delay: 0.16s;
+}
+
+.d3 {
+  transition-delay: 0.24s;
+}
+
+.d4 {
+  transition-delay: 0.32s;
+}
+
+.d5 {
+  transition-delay: 0.40s;
+}
+
+/* ---------- Keyframe animations ---------- */
+@keyframes floaty {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 16px rgba(139, 92, 246, 0);
+  }
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    scroll-behavior: auto;
+  }
+}
+
+/* ------------------------------------------------------------
+   Premium Logo Hover Animation and Typography System
+   ------------------------------------------------------------ */
+
+/* Logo Hover Effect */
+.logo {
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+  /* subtle glow */
+}
+
+/* Typography Classes */
+.main-title {
+  font-family: var(--font-head);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111111;
+}
+
+.section-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111111;
+}
+
+.sub-title {
+  font-family: var(--font-head);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #222222;
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #555555;
+}
+
+/* Responsive Typography */
+@media (max-width: 992px) {
+  .main-title {
+    font-size: 40px;
+  }
+
+  .section-title {
+    font-size: 30px;
+    margin-top: 30px !important;
+  }
+
+  .sub-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .sub-title {
+    font-size: 20px;
+  }
+}
+
+/* ------------------------------------------------------------
+   Custom Cursor (fav.png) – premium mouse pointer
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   Project pages — collapse the navbar spacer on responsive
+   so the hero sits flush under the fixed navbar (no white gap).
+   The fixed navbar overlays the hero top edge.
+   ------------------------------------------------------------ */
+@media (max-width: 991px) {
+  .section.upcoming {
+    overflow-x: hidden;
+    padding: 36px 5%;
+  }
+
+  .one-sea-page .hero-navbar {
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: none !important;
+  }
+}
+
+.heading-main-center {
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 46px;
+  text-align: center;
+}
+
+.heading-main {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 46px;
+}
+
+.vn-subtitle-center {
+  color: #000 !important;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subtext-eyebrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  min-width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--grad-purple);
+  transform-origin: left center;
+  animation: ebLine 0.7s var(--ease) both;
+}
+
+.section-title .accent {
+  color: var(--purple-500);
+}
+
+.subtext-eyebrow {
+  font-family: 'Qwigley', cursive;
+  position: relative;
+  display: inline-block;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #160d23;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111111;
+}
+
+.vn-subtitle-center {
+  text-align: center !important;
+  margin: 6px 0 0;
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* ============================================================
+   VOORA — Unified Icon System (Lucide)
+   All SVG icons site-wide get consistent size & stroke weight.
+   Override per-context using --icon-size and --icon-stroke.
+   ============================================================ */
+.v-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Default: inherit font-size, luxury 1.5 stroke */
+svg[class*="lucide"],
+.v-icon svg {
+  width: var(--icon-size, 1em);
+  height: var(--icon-size, 1em);
+  stroke-width: var(--icon-stroke, 1.5);
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* ── Context-specific size tokens ───────────────────────────── */
+
+/* About.jsx feature grid */
+.feature-icon svg {
+  color: #bf953f;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 1.5rem;
+}
+
+/* Service cards (home & services page) */
+.service-icon svg,
+.sp-service-icon svg {
+  --icon-size: 2rem;
+  --icon-stroke: 1.25;
+}
+
+/* Process / timeline steps */
+.sp-process-icon svg {
+  --icon-size: 1.75rem;
+  --icon-stroke: 1.25;
+}
+
+/* Project card info grid */
+.grid-icon svg {
+  --icon-size: 1.1rem;
+  --icon-stroke: 1.75;
+}
+
+/* Marquee ribbon */
+.marquee-item .icon svg {
+  --icon-size: 1.2rem;
+  --icon-stroke: 1.75;
+}
+
+/* Navbar chevrons */
+.dropdown-icon,
+.submenu-icon {
+  --icon-size: 0.8rem;
+  --icon-stroke: 2;
+}
+
+/* Badge / type labels on project cards */
+.up-type svg,
+.up-price-badge svg {
+  --icon-size: 0.9rem;
+  --icon-stroke: 2;
+}
+
+/* Location text inline */
+.up-location svg {
+  --icon-size: 0.85rem;
+  --icon-stroke: 2;
+}
+
+/* Form input icons */
+.input-wrap svg {
+  --icon-size: 1rem;
+  --icon-stroke: 1.75;
+  color: var(--purple-500);
+  flex-shrink: 0;
+}
+
+/* Client stories carousel */
+.cs-play svg {
+  --icon-size: 1.25rem;
+  --icon-stroke: 2;
+}
+
+.cs-arrow svg {
+  --icon-size: 1rem;
+  --icon-stroke: 2;
+}
+
+/* Up-go button (arrow top-right on cards) */
+.up-go svg {
+  --icon-size: 1.1rem;
+  --icon-stroke: 2;
+}
+
+/* View more / know more buttons */
+.know-more-btn svg,
+.view-cta-primary svg,
+.brochure-btn svg,
+.download-btn svg {
+  --icon-size: 0.9rem;
+  --icon-stroke: 2;
+}
+
+/* Amenities grid */
+.amenity-icon svg {
+  --icon-size: 1.5rem;
+  --icon-stroke: 1.5;
+  color: #bf953f;
+}

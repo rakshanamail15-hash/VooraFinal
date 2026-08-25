@@ -1,0 +1,806 @@
+/* =========================
+   VIDEO SECTION
+========================= */
+
+.video-section {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.video-head {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.video-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 20px;
+}
+
+.video-item {
+  min-width: 50%;
+  padding: 0 10px;
+}
+
+@media(max-width:991px) {
+  .video-item {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .video-item video {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    display: block;
+  }
+
+  .video-card {
+    height: auto;
+  }
+}
+
+.video-head span {
+  display: inline-block;
+  color: #FFD700;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.video-head h2 {
+  font-size: 40px;
+  margin: 0;
+  color: #111;
+}
+
+.video-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.video-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+
+.video-item {
+  flex: 0 0 50%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.video-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 25px;
+
+  background: linear-gradient(transparent,
+      rgba(0, 0, 0, .85));
+}
+
+.video-overlay h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+}
+
+/* =========================
+   ARROWS
+========================= */
+
+.video-nav {
+  position: absolute;
+  top: 58%;
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fff;
+  color: #A16EEF;
+
+  cursor: pointer;
+
+  font-size: 24px;
+  z-index: 10;
+}
+
+.video-prev {
+  left: -25px;
+}
+
+.video-next {
+  right: -25px;
+}
+
+.video-nav:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .video-card iframe {
+    height: 100%;
+  }
+
+  .video-head h2 {
+    font-size: 30px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:991px) {
+
+  .video-item {
+    flex: 0 0 100%;
+  }
+
+  /* Track keeps its inline transform so the arrow buttons actually move it.
+     (Old rule that forced `transform: none !important` was breaking the slider.) */
+
+  .video-card iframe {
+    height: 100%;
+  }
+
+  .video-head h2 {
+    font-size: 24px;
+  }
+
+  .video-section {
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+  }
+
+  .video-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    z-index: 12;
+    top: auto;
+    bottom: 5px;
+    transform: none;
+    border: 1px solid #935ce9;
+    background: #ffffff;
+    color: #935ce9;
+    box-shadow: none;
+  }
+
+  .video-nav:hover:not(:disabled) {
+    background: #935ce9;
+    color: #FFD700;
+  }
+
+  .video-prev {
+    left: calc(50% - 50px);
+  }
+
+  .video-next {
+    right: auto;
+    left: calc(50% + 6px);
+  }
+}
+
+/* =========================
+   ULTRA-SMALL ≤ 480px — arrows still visible, slightly smaller
+========================= */
+@media (max-width: 480px) {
+  .video-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    bottom: 8px;
+  }
+
+  .video-prev {
+    left: calc(50% - 44px);
+  }
+
+  .video-next {
+    left: calc(50% + 6px);
+  }
+}
+
+.video-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.video-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+
+.video-item {
+  flex: 0 0 50%;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media(max-width:991px) {
+  .video-item {
+    flex: 0 0 100%;
+  }
+
+  /* Keep the inline transform — arrows control the slider via JS */
+}
+
+/* ===========================
+   TESTIMONIALS — PROFESSIONAL
+=========================== */
+.testimonials {
+  padding: 75px 5%;
+  background: #fafafa;
+  position: relative;
+  overflow: hidden;
+}
+
+.customertestimonial {
+  padding: 75px 5%;
+
+}
+
+/* =========================
+   TWO COLUMN LAYOUT
+========================= */
+@media (min-width: 991px) {
+  .ts-left {
+    margin-bottom: 130px;
+  }
+}
+
+.testimonials-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.ts-cell {
+  flex: 0 0 50%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.ts-left {
+  flex: 0 0 35%;
+}
+
+.ts-right {
+  flex: 0 0 65%;
+  min-width: 0;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.ts-head {
+  text-align: left;
+  max-width: 100%;
+  margin: 0;
+}
+
+.ts-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #FFD700;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.ts-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #935ce9;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.5px;
+}
+
+.ts-subtitle {
+  font-size: 16px;
+  color: #5b6478;
+  line-height: 1.85;
+  max-width: 100%;
+  margin: 0 0 26px;
+}
+
+.ts-divider {
+  width: 80px;
+  height: 3px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #FFD700, #facc15);
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.ts-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.ts-track {
+  display: flex;
+  gap: 0px;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.ts-cell {
+  flex: 0 0 50%;
+  padding: 0;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.ts-card {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid #ececec;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+  will-change: transform;
+}
+
+.ts-card:hover {
+  transform: translateY(-6px);
+  border-color: #d8d8d8;
+}
+
+.ts-card p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.ts-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ts-author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ts-author-info h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+  font-weight: 700;
+}
+
+.ts-author-info span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+
+  .customertestimonial {
+    padding: 36px 5%;
+  }
+
+  .testimonials-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .ts-left,
+  .ts-right {
+    flex: 1;
+    width: 100%;
+  }
+
+  .ts-title {
+    font-size: 38px;
+  }
+
+  .ts-head {
+    text-align: center;
+  }
+
+  .ts-divider {
+    margin: 0 auto;
+  }
+
+  .ts-subtitle {
+    margin: 0 auto 26px;
+  }
+}
+
+
+
+@media(max-width:991px) {
+  .testimonials {
+    padding: 36px 0%;
+  }
+
+  .ts-cell {
+    flex: 0 0 100%;
+  }
+
+  .ts-title {
+    font-size: 32px;
+  }
+
+  .ts-card {
+    padding: 30px 24px;
+  }
+}
+
+/* PERSON BLOCK — TOP OF CARD */
+
+.ts-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ts-avatar {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #f3eeff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #e3e3e3, 0 4px 10px rgba(109, 40, 217, 0.12);
+}
+
+.ts-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 50%;
+}
+
+.ts-person-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ts-person strong {
+  display: block;
+  color: #935ce9;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ts-person span {
+  display: block;
+  font-size: 13px;
+  color: #7a8194;
+  margin-top: 3px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* STARS */
+
+.ts-stars {
+  color: #bf953f;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+/* QUOTE MARK — hidden, not used in new layout */
+
+.ts-quote {
+  display: none;
+}
+
+/* QUOTE TEXT */
+
+/* .ts-card p {
+  color: #2b2f3a;
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+  flex-grow: 1;
+} */
+
+/* =========================
+   DOTS / NAV — navy + gold palette
+========================= */
+
+.ts-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ARROW BUTTONS */
+
+.ts-dots button {
+  border: 1px solid #935ce9;
+  cursor: pointer;
+  background: #ffffff;
+  color: #935ce9;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: none;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ts-dots button:hover:not(:disabled) {
+  background: #935ce9;
+  color: #FFD700;
+  border-color: #935ce9;
+  transform: translateY(-2px);
+}
+
+.ts-dots button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #c9cfd9;
+  color: #8892a8;
+  background: #ffffff;
+}
+
+/* DOTS */
+
+.dot {
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px;
+  border: none !important;
+  border-radius: 50% !important;
+  background: #c9cfd9 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.dot:hover {
+  background: #935ce9 !important;
+  transform: none !important;
+}
+
+.dot.active {
+  width: 28px !important;
+  border-radius: 20px !important;
+  background: #A16EEF !important;
+}
+
+/* MOBILE TWEAK */
+
+@media(max-width:991px) {
+
+  .ts-dots {
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .ts-dots button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .dot.active {
+    width: 22px !important;
+  }
+}
+
+/* ===========================
+   LAPTOP
+=========================== */
+
+@media (max-width: 1200px) {
+
+  .ts-card {
+    padding: 28px 26px;
+  }
+
+  .ts-cell {
+    padding: 14px;
+  }
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 991px) {
+
+  .testimonials {
+    padding: 36px 0%;
+  }
+
+  .ts-cell {
+    flex: 0 0 50%;
+  }
+
+  .ts-title {
+    font-size: 36px;
+  }
+
+  .ts-head {
+    margin-bottom: 55px;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:991px) {
+
+  .testimonials {
+    padding: 36px 0%;
+  }
+
+  .ts-cell {
+    flex: 0 0 100%;
+    padding: 10px 4px;
+  }
+
+  .ts-card {
+    padding: 26px 22px;
+  }
+
+  .ts-head {
+    margin-bottom: 40px;
+  }
+
+  .ts-title {
+    font-size: 28px;
+  }
+
+  .ts-subtitle {
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  .ts-avatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+
+  .ts-person strong {
+    font-size: 14.5px;
+  }
+
+  .ts-person span {
+    font-size: 12.5px;
+  }
+
+  .ts-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .ts-stars {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width: 420px) {
+
+  .ts-card {
+    padding: 22px 18px;
+  }
+
+  .ts-person {
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  .ts-title {
+    font-size: 24px;
+  }
+}

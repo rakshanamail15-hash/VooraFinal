@@ -1,0 +1,215 @@
+/* =====================================================
+   PREMIUM REAL ESTATE PRELOADER
+===================================================== */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+}
+
+/* ======================================
+   SPLIT PANELS
+====================================== */
+
+.pl-panel {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(139, 92, 246, 0.15),
+      transparent 40%),
+    radial-gradient(circle at bottom left,
+      rgba(167, 139, 250, 0.12),
+      transparent 45%),
+    linear-gradient(135deg,
+      #d7c7f7 0%,
+      #d7c7f7 25%,
+      #d7c7f7 55%,
+      #d7c7f7 100%);
+
+  transition: transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.pl-left {
+  left: 0;
+  border-right: 1px solid rgba(73, 6, 228, 0.08);
+}
+
+.pl-right {
+  right: 0;
+  border-left: 1px solid rgba(75, 8, 232, 0.08);
+}
+
+.preloader.is-done .pl-left {
+  transform: translateX(-100%);
+}
+
+.preloader.is-done .pl-right {
+  transform: translateX(100%);
+}
+
+/* ======================================
+   CONTENT
+====================================== */
+
+.pl-content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all .5s ease;
+}
+
+.preloader.is-done .pl-content {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* ======================================
+   GLOW
+====================================== */
+
+.logo-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(139, 92, 246, .18),
+      rgba(139, 92, 246, .08),
+      transparent 70%);
+
+  animation: glowPulse 4s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .7;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   LOGO
+====================================== */
+
+.preloader-logo {
+  width: 280px;
+  max-width: 80%;
+  position: relative;
+  z-index: 2;
+
+  animation: logoFloat 3s infinite ease-in-out;
+
+  filter:
+    drop-shadow(0 12px 24px rgba(139, 92, 246, .12)) drop-shadow(0 24px 48px rgba(139, 92, 246, .08));
+}
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ======================================
+   TEXT
+====================================== */
+
+.loader-text {
+  margin-top: 18px;
+
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #7b728d;
+
+  font-weight: 600;
+}
+
+/* ======================================
+   ANIMATED LINE
+====================================== */
+
+.loader-line {
+  width: 220px;
+  height: 3px;
+
+  margin-top: 30px;
+
+  background: rgba(139, 92, 246, .12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.loader-line span {
+  display: block;
+  height: 100%;
+  width: 40%;
+
+  background: linear-gradient(90deg,
+      #935ce9,
+      #935ce9);
+
+  border-radius: 999px;
+
+  animation: loadingLine 1.5s infinite ease-in-out;
+}
+
+@keyframes loadingLine {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(350%);
+  }
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 768px) {
+  .preloader-logo {
+    width: 200px;
+  }
+
+  .logo-glow {
+    width: 280px;
+    height: 280px;
+  }
+
+  .loader-line {
+    width: 160px;
+  }
+
+  .loader-text {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+}
