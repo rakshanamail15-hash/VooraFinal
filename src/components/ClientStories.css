@@ -355,8 +355,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 16px;
   margin-top: 26px;
+}
+
+.cs-dot-arrow {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--purple-200, #d8b4fe);
+  color: var(--purple-700, #7e22ce);
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.3s var(--ease);
+}
+
+.cs-dot-arrow:hover {
+  background: var(--grad-purple);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
 }
 
 .cs-dot-btn {
@@ -628,8 +651,14 @@
   }
 
   .cs-dots {
-    gap: 6px;
+    gap: 12px;
     margin-top: 20px;
+  }
+
+  .cs-dot-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
   }
 
   .cs-dot-btn {

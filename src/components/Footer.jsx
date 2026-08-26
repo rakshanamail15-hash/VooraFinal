@@ -8,7 +8,7 @@ import {
   FaXTwitter,
   FaFacebookF,
 } from 'react-icons/fa6'
-const footerlogo = "https://res.cloudinary.com/wdfwbagg/image/upload/v1786599824/Voora_logo_hd_white_dqx6xk.png"
+const footerlogo = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787728235/Voora_logo_png_pw2cvi.png"
 export default function Footer() {
   return (
     <footer className="footer">

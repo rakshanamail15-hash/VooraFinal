@@ -183,16 +183,6 @@ export default function ClientStories() {
 
         <div className="cs-carousel">
 
-          {/* LEFT BUTTON */}
-
-          <button
-            className="cs-arrow cs-arrow--prev"
-            onClick={goPrev}
-            aria-label="Previous story"
-          >
-            <IcChevronLeft aria-hidden="true" />
-          </button>
-
           {/* TRACK */}
 
           <div
@@ -209,8 +199,8 @@ export default function ClientStories() {
                 <button
                   key={s.id}
                   className={`cs-card ${isActive
-                      ? 'cs-card--active'
-                      : ''
+                    ? 'cs-card--active'
+                    : ''
                     }`}
                   onClick={() =>
                     isActive
@@ -218,8 +208,8 @@ export default function ClientStories() {
                       : setActive(i)
                   }
                   aria-label={`${isActive
-                      ? 'Play'
-                      : 'View'
+                    ? 'Play'
+                    : 'View'
                     } ${s.label}`}
                 >
 
@@ -255,10 +245,6 @@ export default function ClientStories() {
                             WATCH STORY
                           </span>
 
-                          <span className="cs-watch-arrow">
-                            <IcArrowRight aria-hidden="true" />
-                          </span>
-
                         </div>
 
                       </>
@@ -273,35 +259,41 @@ export default function ClientStories() {
 
           </div>
 
-          {/* RIGHT BUTTON */}
-
-          <button
-            className="cs-arrow cs-arrow--next"
-            onClick={goNext}
-            aria-label="Next story"
-          >
-            <IcChevronRight aria-hidden="true" />
-          </button>
-
         </div>
 
         {/* DOTS */}
 
         <div className="cs-dots">
 
+          <button
+            className="cs-dot-arrow"
+            onClick={goPrev}
+            aria-label="Previous story"
+          >
+            <IcChevronLeft aria-hidden="true" />
+          </button>
+
           {stories.map((s, i) => (
 
             <button
               key={s.id}
               className={`cs-dot-btn ${i === active
-                  ? 'is-active'
-                  : ''
+                ? 'is-active'
+                : ''
                 }`}
               onClick={() => setActive(i)}
               aria-label={`Go to ${s.label}`}
             />
 
           ))}
+
+          <button
+            className="cs-dot-arrow"
+            onClick={goNext}
+            aria-label="Next story"
+          >
+            <IcChevronRight aria-hidden="true" />
+          </button>
 
         </div>
 

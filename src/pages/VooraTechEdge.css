@@ -2765,6 +2765,7 @@
 
   .amenities-grid {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
   }
 
   .amenities-wrapper {
@@ -2778,6 +2779,7 @@
 
   .amenities-grid {
     grid-template-columns: 1fr;
+    margin-top: 15px;
   }
 
   .amenities-wrapper {
@@ -3594,6 +3596,7 @@
   .amenities-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-top: 15px;
   }
 
   .amenity-card {
@@ -3627,6 +3630,7 @@
   .amenities-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    margin-top: 15px;
   }
 
   .amenity-card {
@@ -3662,6 +3666,7 @@
   .amenities-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    margin-top: 15px;
   }
 
   .amenity-card {
