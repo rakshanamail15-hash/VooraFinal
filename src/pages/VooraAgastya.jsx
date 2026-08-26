@@ -1060,7 +1060,7 @@ export default function VooraAgastya() {
       </AnimatePresence>
 
       {/* ── Floor Plans ── */}
-      <section className="project-plans-section" id="plan">
+      {/* <section className="project-plans-section" id="plan">
         <div className="project-plans-wrapper">
 
           <div className="project-plans-content">
@@ -1140,7 +1140,7 @@ export default function VooraAgastya() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
 
       {/* ── Master Plan ── */}
