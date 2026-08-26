@@ -12,7 +12,7 @@
   height: 86px;
 }
 
-.vs-sections {
+.vs-section {
   padding: 75px 5%;
   background: #fdf8f4;
 }
@@ -96,7 +96,7 @@
   align-items: center;
   gap: 60px;
   max-width: 1400px;
-  margin: 0 auto;
+  padding: 75px 5%;
 }
 
 .vs-info {
@@ -108,31 +108,41 @@
   overflow: hidden;
 }
 
-.vs-track::-webkit-scrollbar {
+.shorts-track {
+  display: flex !important;
+  gap: 30px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  scrollbar-width: none;
+}
+
+.shorts-track::-webkit-scrollbar {
   display: none;
 }
 
-.vs-card {
+.shorts-track .vs-card {
   will-change: transform;
   transform: translateZ(0);
   contain: layout paint style;
-  /* Exactly 2 cards per view minus the 24px gap */
-  flex: 0 0 calc(50% - 12px) !important;
+  scroll-snap-align: start;
+  /* Exactly 2 cards per view minus the 30px gap */
+  flex: 0 0 calc(50% - 15px) !important;
   background: #fff;
-  border-radius: 20px !important;
+  border-radius: 20px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-  height: auto !important;
+  height: auto;
 }
 
-.vs-card:hover {
+.shorts-track .vs-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(147, 92, 233, 0.15);
 }
 
-.vs-card iframe {
+.shorts-track .vs-card iframe {
   width: 100% !important;
-  height: 80vh !important;
+  height: 440px !important;
   border: none;
   display: block;
   background: #000;
@@ -178,6 +188,10 @@
     height: 74px;
   }
 
+  .vs-section {
+    padding: 35px 5%;
+  }
+
   .ts-page-hero {
     min-height: 50vh;
     padding: 64px 22px;
@@ -190,6 +204,7 @@
   .vs-container {
     flex-direction: column;
     gap: 40px;
+    padding: 30px 5%;
   }
 
   .vs-info {
@@ -224,16 +239,16 @@
     line-height: 1.6;
   }
 
-  .vs-card {
+  .shorts-track .vs-card {
     will-change: transform;
     transform: translateZ(0);
     contain: layout paint style;
     /* Show 1 card fully on mobile */
-    flex: 0 0 calc(100% - 16px);
+    flex: 0 0 calc(100% - 16px) !important;
   }
 
-  .vs-card iframe {
-    height: 70vh !important;
+  .shorts-track .vs-card iframe {
+    height: 350px !important;
   }
 }
 

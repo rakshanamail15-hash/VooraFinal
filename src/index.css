@@ -536,7 +536,7 @@ select {
 
   .section-title {
     font-size: 30px;
-    margin-top: 30px !important;
+    /* margin-top: 30px !important; */
   }
 
   .sub-title {
@@ -595,7 +595,7 @@ select {
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 46px;
+  /* margin-bottom: 46px; */
 }
 
 .vn-subtitle-center {

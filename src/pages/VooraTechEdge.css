@@ -565,11 +565,25 @@
   cursor: pointer;
 }
 
+.project-plans-track {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.project-plans-track::-webkit-scrollbar {
+  display: none;
+}
+
 .project-plan-cards {
   flex: 0 0 calc(50% - 15px);
   border-radius: 24px;
   overflow: hidden;
   background: #fff;
+  scroll-snap-align: start;
 }
 
 .project-plan-cards img {
@@ -1012,7 +1026,7 @@
 /* SECTION */
 
 .premium-gallery {
-  padding: 100px 5%;
+  padding: 75px 5%;
   background: #f8f8f8;
 }
 
@@ -2531,7 +2545,7 @@
     font-size: 16px;
   }
 
-  /* .overview-section,
+   .overview-section,
   .timeline-section,
   .video-section-full,
   .location-section,
@@ -2539,8 +2553,8 @@
   .gallery-section,
   .news-section,
   .faq-section {
-    padding: 60px 4%;
-  } */
+    padding: 35px 5%;
+  }
 
   .overview-image img {
     height: 320px;
@@ -2655,7 +2669,7 @@
 }
 
 .amenities-section {
-  padding: 80px 5%;
+  padding: 75px 5%;
   background: #f5f5f5;
 }
 
@@ -3511,7 +3525,7 @@
 ========================================== */
 
 .amenities-section {
-  padding: 90px 0;
+  padding: 75px 5%;
   background: #fff;
 }
 
@@ -3750,7 +3764,7 @@
 
 @media (max-width: 768px) {
   .overview-section {
-    padding: 80px 4%;
+    padding: 35px 5%;
   }
 }
 
@@ -4075,7 +4089,10 @@
     transform: translateX(-50%);
   }
 
-  to {
-    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .project-plan-cards {
+    flex: 0 0 100% !important;
   }
 }

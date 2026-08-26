@@ -203,6 +203,10 @@
     grid-template-columns: 1fr;
   }
 
+  .awards-section {
+    padding: 30px 5%;
+  }
+
   .voora-about-header h2,
   .management-header h2,
   .why-voora-header h2,

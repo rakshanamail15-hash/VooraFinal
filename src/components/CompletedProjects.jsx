@@ -501,11 +501,8 @@ export default function CompletedProjects() {
         <div className="up-head">
           <div>
             <h2 className="section-title">
-              Completed
-              <br className="br-only" />
-              <span className="accent">
-                Projects
-              </span>
+              Completed{" "}
+              <span className="accent">Projects</span>
             </h2>
 
             <p>

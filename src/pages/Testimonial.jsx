@@ -130,7 +130,7 @@ export default function Testimonial() {
           {/* Right Slider */}
           <div className="vs-gallery">
             <div
-              className="vs-track"
+              className="vs-track shorts-track"
               ref={masterContainerRef}
               onMouseEnter={stopMasterAutoScroll}
               onMouseLeave={startMasterAutoScroll}

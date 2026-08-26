@@ -419,13 +419,13 @@ export default function UpcomingProjects() {
         <div className="up-head">
           <div>
             <h2 className="section-title">
-              Ongoing
-              <br className="br-only" />
+  Ongoing{" "}
+  <br className="br-only" />
 
-              <span className="accent">
-                Projects
-              </span>
-            </h2>
+  <span className="accent">
+    Projects
+  </span>
+</h2>
 
             <p>
               Discover our upcoming

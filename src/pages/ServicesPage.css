@@ -340,9 +340,10 @@
   }
 
   .service-circle {
-    margin-top: 40px;
+    margin-top: -15px;
   }
 }
+
 
 @media (max-width: 768px) {
   .hero-left h1 {

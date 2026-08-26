@@ -1130,7 +1130,7 @@ html {
 
   .overview-section {
     min-height: auto;
-    padding: 60px 5%;
+    padding: 35px 5% !important;
   }
 
   .overview-text {
@@ -1160,7 +1160,7 @@ html {
 
   .overview-section {
     min-height: auto;
-    padding: 40px 5%;
+    padding: 35px 5%;
   }
 
   .position-left {
@@ -1200,7 +1200,7 @@ html {
 
 @media (max-width: 375px) {
   .overview-section {
-    padding: 80px 5%;
+    padding: 35px 5%;
   }
 
   .overview-heading {

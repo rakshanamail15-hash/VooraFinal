@@ -42,7 +42,7 @@
 
 .svf-card:hover {
   box-shadow: 0 30px 30px rgba(228, 225, 225, 0.55);
-    transform: translateY(-4px);
+  transform: translateY(-4px);
 
 }
 
@@ -66,11 +66,11 @@
 }
 
 .svf-title {
-    font-weight: 600;
-    color: black;
-    margin: 3px 0 1.4rem;
-    line-height: 1.7;
-    font-size: larger;
+  font-weight: 600;
+  color: black;
+  margin: 3px 0 1.4rem;
+  line-height: 1.7;
+  font-size: larger;
 }
 
 .svf-subtitle {
@@ -98,6 +98,10 @@
     grid-template-columns: 1fr;
   }
 
+  .svf-submit {
+    font-size: 15px;
+  }
+
   .svf-card {
     padding: 1.6rem 1.2rem;
   }
@@ -122,10 +126,10 @@
 
 .svf-field input,
 .svf-field select {
-    background: rgb(250 253 244);
-    border: 1px solid #bf953f;
+  background: rgb(250 253 244);
+  border: 1px solid #bf953f;
   border-radius: var(--svf-radius-sm);
-color: #918c83;
+  color: #918c83;
   font-size: 0.92rem;
   padding: 0.65rem 0.9rem;
   outline: none;
@@ -164,8 +168,8 @@ color: #918c83;
 .svf-submit {
   width: 100%;
   margin-top: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.85rem 0.5rem;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   letter-spacing: 0.04em;
@@ -174,10 +178,10 @@ color: #918c83;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  background:linear-gradient(135deg, #935ce9, #8453d2);
-    box-shadow: 0 6px 14px rgba(124, 58, 237, 0.30), 0 2px 4px rgba(124, 58, 237, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    transition: transform 0.35s cubic-bezier(.2, .8, .2, 1), box-shadow 0.35s cubic-bezier(.2, .8, .2, 1);
-    color:#fff; 
+  background: linear-gradient(135deg, #935ce9, #8453d2);
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.30), 0 2px 4px rgba(124, 58, 237, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 0.35s cubic-bezier(.2, .8, .2, 1), box-shadow 0.35s cubic-bezier(.2, .8, .2, 1);
+  color: #fff;
 }
 
 .svf-submit::before {

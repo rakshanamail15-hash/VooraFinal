@@ -1315,9 +1315,9 @@ export default function VooraOneSea() {
             <div className="heading-main">
               <div data-reveal="true" className="active is-visible">
                 <h2 className="section-title">
-                  PROJECT
+                  Project
                   <br className="br-only" />
-                  <span className="accent"> PLANS</span>
+                  <span className="accent"> Plans</span>
                 </h2>
               </div>
             </div>
@@ -1362,7 +1362,7 @@ export default function VooraOneSea() {
                   const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
                   const firstCard = carousel.children[0];
                   const gap = parseFloat(window.getComputedStyle(carousel).gap || "0");
-                  const step = firstCard ? firstCard.offsetWidth + gap : 220;
+                  const step = carousel.clientWidth;
 
                   if (carousel.scrollLeft >= maxScrollLeft - 1) {
                     carousel.scrollTo({ left: 0, behavior: "smooth" });
@@ -1555,7 +1555,7 @@ export default function VooraOneSea() {
               </div>
             </div>
 
-            <div className="ts-dots" style={{ marginTop: "30px", position: "relative", zIndex: 10 }}>
+            <div className="ts-dots" style={{ marginTop: "-20px", position: "relative", zIndex: 10 }}>
               <button
                 onClick={vsPrev}
                 disabled={vsStart === 0}
@@ -1781,7 +1781,7 @@ export default function VooraOneSea() {
           {/* Right Slider */}
           <div className="vs-gallery">
             <div
-              className="vs-track"
+              className="vs-track shorts-track"
               ref={masterContainerRef}
               onMouseEnter={stopMasterAutoScroll}
               onMouseLeave={startMasterAutoScroll}

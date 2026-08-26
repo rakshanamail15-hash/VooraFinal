@@ -786,7 +786,7 @@
 /* SECTION */
 
 .premium-gallery {
-  padding: 75px 0%;
+  /* padding: 75px 0%; */
   background: #f8f8f8;
 }
 
@@ -2264,15 +2264,15 @@
     font-size: 16px;
   }
 
-  /* .overview-section,
+   .overview-section,
   .timeline-section,
   .video-section-full,
   .location-section,
   .plans-section,
   .gallery-section,
   .news-section {
-    padding: 60px 4%;
-  } */
+    padding: 35px 5%;
+  } 
 
   /* .faq-section {
     padding: 60px 8%;
@@ -3492,7 +3492,7 @@
 
 /* new gallery style  */
 #gallery {
-  padding: 75px 0;
+  /* padding: 75px 0; */
   overflow: hidden;
   background: #fff;
 }
@@ -3901,7 +3901,7 @@
   display: flex;
   align-items: center;
   gap: 80px;
-  padding: 60px 4%;
+  padding: 75px 5%;
 }
 
 /* LEFT SIDE - 25% */
@@ -4042,6 +4042,10 @@
   /* .project-plans-section {
     padding: 60px 4%;
   } */
+
+  .project-plans-wrapper {
+    padding: 35px 5%;
+  }
 
   .project-plans-title {
     font-size: 2rem;
@@ -4187,6 +4191,10 @@
 @media (max-width: 860px) {
   .mpt-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-plans-wrapper {
+    padding: 35px 5%;
   }
 
   .mpt-image-cell {

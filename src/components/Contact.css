@@ -349,8 +349,9 @@
     position: static;
     transform: none;
     width: 100%;
+    box-sizing: border-box;
     margin-top: 22px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .hero-stat strong {

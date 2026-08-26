@@ -144,7 +144,7 @@ export default function Footer() {
             <span style={{ color: "#d4a646" }}>
               Designed & Developed By{" "}
               <a
-                href="https://asterinfomatrix.com/"
+                href="https://www.asterinfometrics.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "#d4a646", textDecoration: "none" }}

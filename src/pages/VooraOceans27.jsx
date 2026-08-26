@@ -727,7 +727,7 @@ export default function VooraOcean27() {
 
       floorPlansTimerRef.current = window.setInterval(() => {
         const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-        const step = Math.max(carousel.clientWidth / 2, 220);
+        const step = Math.max(carousel.clientWidth, 220);
 
         if (carousel.scrollLeft >= maxScrollLeft - 1) {
           carousel.scrollTo({ left: 0, behavior: "smooth" });
@@ -1266,7 +1266,7 @@ export default function VooraOcean27() {
 
                 floorPlansTimerRef.current = window.setInterval(() => {
                   const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-                  const step = Math.max(carousel.clientWidth / 2, 220);
+                  const step = Math.max(carousel.clientWidth, 220);
 
                   if (carousel.scrollLeft >= maxScrollLeft - 1) {
                     carousel.scrollTo({ left: 0, behavior: "smooth" });
