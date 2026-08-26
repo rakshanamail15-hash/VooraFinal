@@ -1310,10 +1310,10 @@ export default function VooraOneSea() {
       <section className="project-plans-section" id="plan">
         <div className="project-plans-wrapper">
 
-          {/* Left Content */}
           <div className="project-plans-content">
-            <div className="heading-main">
+            <div className="heading-mains">
               <div data-reveal="true" className="active is-visible">
+
                 <h2 className="section-title">
                   Project
                   <br className="br-only" />
@@ -1328,7 +1328,6 @@ export default function VooraOneSea() {
               experiences for modern families.
             </p>
 
-            {/* Replaced arrows with button */}
             <motion.button
               className="cta-btn"
               onClick={() => {
@@ -1343,7 +1342,6 @@ export default function VooraOneSea() {
             </motion.button>
           </div>
 
-          {/* Right Carousel */}
           <div className="project-plans-slider">
             <div
               className="project-plans-track"
@@ -1360,9 +1358,7 @@ export default function VooraOneSea() {
 
                 floorPlansTimerRef.current = window.setInterval(() => {
                   const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-                  const firstCard = carousel.children[0];
-                  const gap = parseFloat(window.getComputedStyle(carousel).gap || "0");
-                  const step = carousel.clientWidth;
+                  const step = Math.max(carousel.clientWidth, 220);
 
                   if (carousel.scrollLeft >= maxScrollLeft - 1) {
                     carousel.scrollTo({ left: 0, behavior: "smooth" });
@@ -1388,21 +1384,21 @@ export default function VooraOneSea() {
                 <img src={plan4} alt="Plan 4" />
               </div>
 
-              <div className="project-plan-card" onClick={() => setPopupImage(plan5)}>
+              {/* <div className="project-plan-card" onClick={() => setPopupImage(plan4)}>
                 <img src={plan5} alt="Plan 5" />
               </div>
 
-              <div className="project-plan-card" onClick={() => setPopupImage(plan6)}>
+              <div className="project-plan-card" onClick={() => setPopupImage(plan4)}>
                 <img src={plan6} alt="Plan 6" />
               </div>
 
-              <div className="project-plan-card" onClick={() => setPopupImage(plan7)}>
+              <div className="project-plan-card" onClick={() => setPopupImage(plan4)}>
                 <img src={plan7} alt="Plan 7" />
               </div>
 
-              <div className="project-plan-card" onClick={() => setPopupImage(plan8)}>
+              <div className="project-plan-card" onClick={() => setPopupImage(plan4)}>
                 <img src={plan8} alt="Plan 8" />
-              </div>
+              </div> */}
             </div>
           </div>
 
