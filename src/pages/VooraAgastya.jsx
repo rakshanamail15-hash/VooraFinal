@@ -614,7 +614,7 @@ export default function VooraAgastya() {
 
       floorPlansTimerRef.current = window.setInterval(() => {
         const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-        const step = Math.max(carousel.clientWidth, 220);
+        const step = Math.round((carousel.clientWidth / 2) + 15);
 
         if (carousel.scrollLeft >= maxScrollLeft - 1) {
           carousel.scrollTo({ left: 0, behavior: "smooth" });

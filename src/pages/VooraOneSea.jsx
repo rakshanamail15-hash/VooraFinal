@@ -1358,7 +1358,7 @@ export default function VooraOneSea() {
 
                 floorPlansTimerRef.current = window.setInterval(() => {
                   const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-                  const step = Math.max(carousel.clientWidth, 220);
+                  const step = Math.round((carousel.clientWidth / 2) + 15);
 
                   if (carousel.scrollLeft >= maxScrollLeft - 1) {
                     carousel.scrollTo({ left: 0, behavior: "smooth" });
@@ -1384,7 +1384,7 @@ export default function VooraOneSea() {
                 <img src={plan4} alt="Plan 4" />
               </div>
 
-              {/* <div className="project-plan-card" onClick={() => setPopupImage(plan4)}>
+               <div className="project-plan-card" onClick={() => setPopupImage(plan4)}>
                 <img src={plan5} alt="Plan 5" />
               </div>
 
@@ -1398,7 +1398,7 @@ export default function VooraOneSea() {
 
               <div className="project-plan-card" onClick={() => setPopupImage(plan4)}>
                 <img src={plan8} alt="Plan 8" />
-              </div> */}
+              </div> 
             </div>
           </div>
 

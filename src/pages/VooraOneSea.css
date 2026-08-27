@@ -3963,7 +3963,8 @@
   border-radius: 24px;
   overflow: hidden;
   background: #fff;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
+  min-width: calc(50% - 15px);
 }
 
 .project-plan-card img {
