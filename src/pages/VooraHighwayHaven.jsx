@@ -61,7 +61,8 @@ const book1 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787044239/ONE_
 const book2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917264/book2_xs2p6a.png";
 const book3 = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1785917264/book3_naly9e.png';
 const book4 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787045486/HOME_PAGE_EXPLORE_-_AGASTYA_osze4j.webp";
-
+const herohighwayhavenbanner = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1787894272/Highway_haven_kdcu13.jpg';
+const herohighwayhavenmobilebanner = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1788000884/Highway_haven_mob_xnwidx.jpg';
 const book5 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787031544/WESTSIDE_CTA_POP-UP_534X415_PX_fni06m.webp";
 const book6 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787044825/OCEAN_27_CTA_POP-UP_534X415_px_a3x5xq.webp"
 
@@ -730,7 +731,7 @@ export default function VooraHighwayHaven() {
       <div className="hero-navbar" />
 
       {/* ── Hero ── */}
-      <div className="hero-banner">
+      <div className="hero-banner hero-banner--mobile-auto">
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
@@ -745,14 +746,14 @@ export default function VooraHighwayHaven() {
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="slide">
-                <video
-                  className="slide-image"
-                  src="https://res.cloudinary.com/wdfwbagg/video/upload/v1786014537/landingVideo_io88dy.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
+                <picture>
+                  <source media="(max-width: 768px)" srcSet={herohighwayhavenmobilebanner} />
+                  <img
+                    className="slide-image"
+                    src={herohighwayhavenbanner}
+                    alt="Highway Haven Banner"
+                  />
+                </picture>
                 <div className="slide-overlay" />
               </div>
             </SwiperSlide>

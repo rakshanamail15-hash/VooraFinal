@@ -1,5 +1,6 @@
 import VideoCarousel from "../components/VideoCarousel";
 import "./VooraAgastya.css";
+import "../components/HeroCarousel.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 const icon = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917270/fav1_nlyrnx.png";
@@ -276,15 +277,14 @@ function CountUp({ target, suffix }) {
 export default function VooraAgastya() {
   const slides = [
     {
-      videoId: "byoTnV_YaTM",
-      title: "Voora Project Showcase 1",
+      image: "https://res.cloudinary.com/wdfwbagg/image/upload/v1787836279/Agastya_uap2tb.jpg",
+      mobileImage: "https://res.cloudinary.com/wdfwbagg/image/upload/v1787999516/Agastya_mob_dtaxlq.jpg",
+      title: "Voora Agastya Banner",
     },
   ];
 
   // ✅ ALL HOOKS AT THE TOP — no code between them
   const location = useLocation();
-  const iframeRefs = useRef([]);
-  const playersRef = useRef([]);
   const masterContainerRef = useRef(null);
   const floorPlansRef = useRef(null);
   const floorPlansTimerRef = useRef(null);
@@ -653,106 +653,6 @@ export default function VooraAgastya() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    let active = true;
-
-    const loadPlayer = () => {
-      if (!active) return;
-      slides.forEach((slide, index) => {
-        const iframe = iframeRefs.current[index];
-        if (!iframe) return;
-
-        if (playersRef.current[index] && typeof playersRef.current[index].destroy === "function") {
-          try {
-            playersRef.current[index].destroy();
-          } catch (e) {
-            console.error(e);
-          }
-        }
-
-        const player = new window.YT.Player(iframe, {
-          events: {
-            onReady: (event) => {
-              if (active) {
-                playersRef.current[index] = event.target;
-                event.target.playVideo();
-
-                const heroElement = document.querySelector(".hero-banner") || document.querySelector(".one-sea-hero");
-                const threshold = heroElement ? heroElement.offsetHeight / 2 : 400;
-                if (window.scrollY > threshold) {
-                  event.target.pauseVideo();
-                }
-              }
-            },
-          },
-        });
-      });
-    };
-
-    if (window.YT && window.YT.Player) {
-      loadPlayer();
-    } else {
-      let script = document.querySelector('script[src="https://www.youtube.com/iframe_api"]');
-      if (!script) {
-        script = document.createElement("script");
-        script.src = "https://www.youtube.com/iframe_api";
-        document.body.appendChild(script);
-      }
-
-      const previousCallback = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = () => {
-        if (previousCallback) {
-          try { previousCallback(); } catch (e) { console.error(e); }
-        }
-        loadPlayer();
-      };
-    }
-
-    let scrollFrame = null;
-    const handleScroll = () => {
-      if (scrollFrame) return;
-      scrollFrame = requestAnimationFrame(() => {
-        scrollFrame = null;
-        const heroElement = document.querySelector(".hero-banner") || document.querySelector(".one-sea-hero");
-        const threshold = heroElement ? heroElement.offsetHeight / 2 : 400;
-        const shouldPause = window.scrollY > threshold;
-
-        playersRef.current.forEach((player) => {
-          if (!player) return;
-          try {
-            if (typeof player.pauseVideo === "function" && typeof player.playVideo === "function" && typeof player.getPlayerState === "function") {
-              const state = player.getPlayerState();
-              if (shouldPause && state === 1) {
-                player.pauseVideo();
-              } else if (!shouldPause && state !== 1 && state !== 3) {
-                player.playVideo();
-              }
-            }
-          } catch (err) {
-            console.error(err);
-          }
-        });
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      active = false;
-      window.removeEventListener("scroll", handleScroll);
-      playersRef.current.forEach((player) => {
-        if (player && typeof player.destroy === "function") {
-          try {
-            player.destroy();
-          } catch (e) {
-            console.error(e);
-          }
-        }
-      });
-      playersRef.current = [];
-    };
-  }, []);
-
   /* =========================
      RENDER
   ========================= */
@@ -761,7 +661,7 @@ export default function VooraAgastya() {
       <div className="hero-navbar" />
 
       {/* ── Hero ── */}
-      <div className="hero-banner">
+      <div className="hero-banner hero-banner--mobile-auto">
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
@@ -776,14 +676,15 @@ export default function VooraAgastya() {
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="slide">
-                <video
-                  className="slide-image"
-                  src="https://res.cloudinary.com/wdfwbagg/video/upload/v1786014537/landingVideo_io88dy.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
+                <picture>
+                  {slide.mobileImage && <source media="(max-width: 768px)" srcSet={slide.mobileImage} />}
+                  <img
+                    className="slide-image"
+                    src={slide.image}
+                    alt={slide.title || "Voora Banner"}
+                  />
+                </picture>
+
                 <div className="slide-overlay" />
               </div>
             </SwiperSlide>
@@ -1057,7 +958,7 @@ export default function VooraAgastya() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>    
+      </AnimatePresence>
 
 
       {/* ── Master Plan ── */}

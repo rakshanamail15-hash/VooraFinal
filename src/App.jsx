@@ -55,6 +55,8 @@ import HeroAgastya from "./components/HeroAgastya";
 const HeroHighwayHaven = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917273/herohighwayhaven_f6cn4e.webp";
 import OneSea from "./pages/onesea";
 
+const homeVideo = "https://res.cloudinary.com/wdfwbagg/video/upload/v1786014537/landingVideo_io88dy.mp4";
+
 function HomePage() {
   return (
 
@@ -62,7 +64,7 @@ function HomePage() {
       <Preloader />
 
       <section className="banner-section">
-        <HeroCarousel />
+        <HeroCarousel video={homeVideo} />
       </section>
       <About />
       <UpcomingProjects />

@@ -5,6 +5,7 @@ import ClientStories from "../components/ClientStories";
 import CustomerTestimonials from "../components/CustomerTestimonials";
 // import hero2 from '../assets/image/testimonialbanner.webp';
 const hero2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787634566/Testimonials_Page_-_Hero_Banner_oe6fei.webp"
+const heromobile = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787999957/Testimonials_ngrix7.jpg";
 
 const shortsVideos1 = [
   "vilaYkwCONQ",
@@ -20,28 +21,28 @@ const videoTitles1 = [
   "Murali Shankar MR",
 ];
 
-  const stopMasterAutoScroll = () => {
-    if (masterTimerRef.current) {
-      window.clearInterval(masterTimerRef.current);
-      masterTimerRef.current = null;
+const stopMasterAutoScroll = () => {
+  if (masterTimerRef.current) {
+    window.clearInterval(masterTimerRef.current);
+    masterTimerRef.current = null;
+  }
+};
+const startMasterAutoScroll = () => {
+  const carousel = masterContainerRef.current;
+
+  if (!carousel || masterTimerRef.current) return;
+
+  masterTimerRef.current = window.setInterval(() => {
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+    const step = Math.max(carousel.clientWidth / 4, 260);
+
+    if (carousel.scrollLeft >= maxScrollLeft - 1) {
+      carousel.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      carousel.scrollBy({ left: step, behavior: "smooth" });
     }
-  };
-  const startMasterAutoScroll = () => {
-    const carousel = masterContainerRef.current;
-
-    if (!carousel || masterTimerRef.current) return;
-
-    masterTimerRef.current = window.setInterval(() => {
-      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-      const step = Math.max(carousel.clientWidth / 4, 260);
-
-      if (carousel.scrollLeft >= maxScrollLeft - 1) {
-        carousel.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        carousel.scrollBy({ left: step, behavior: "smooth" });
-      }
-    }, 1800);
-  };
+  }, 1800);
+};
 
 
 export default function Testimonial() {
@@ -96,11 +97,15 @@ export default function Testimonial() {
   return (
     <div className="testimonial-page">
 
-      <section className="about-hero">
-        <div
-          className="hero-bg-image"
-          style={{ backgroundImage: `url(${hero2})` }}
-        />
+      <section className="about-hero ts-hero-auto">
+        <picture>
+          <source media="(max-width: 768px)" srcSet={heromobile} />
+          <img
+            src={hero2}
+            className="hero-bg-image testi-banner-img"
+            alt="Testimonials"
+          />
+        </picture>
       </section>
 
       {/* ── Video Stories Section ── */}
@@ -118,10 +123,10 @@ export default function Testimonial() {
                     <span className="accent">Video Stories</span>
                   </h2>
                   <p className="vs-desc">
-              Explore meticulously crafted layouts designed to maximize
-              natural light, ventilation, functionality, and luxury living
-              experiences for modern families.
-            </p>
+                    Explore meticulously crafted layouts designed to maximize
+                    natural light, ventilation, functionality, and luxury living
+                    experiences for modern families.
+                  </p>
                 </div>
               </div>
             </div>

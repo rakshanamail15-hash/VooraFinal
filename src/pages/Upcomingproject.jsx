@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UpcomingProjects from "../components/UpcomingProjects";
 // import upcomingbanner from "../assets/image/upcomingbanner.webp";
 const upcomingbanner = "https://res.cloudinary.com/wdfwbagg/image/upload/v1786598406/voora_upcoming_project_o0esev.jpg";
+const upcomingmobile = "https://res.cloudinary.com/wdfwbagg/image/upload/v1788001116/completed_r4opwk.jpg";
 
 import "./Upcomingproject.css";
 
@@ -33,11 +34,14 @@ function CommercialCompleted() {
       </div>
 
       <section className="upcoming-hero">
-        <img
-          src={upcomingbanner}
-          alt="Voora Residential Upcoming Projects"
-          className="upcoming-hero-img"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet={upcomingmobile} />
+          <img
+            src={upcomingbanner}
+            alt="Voora Residential Upcoming Projects"
+            className="upcoming-hero-img"
+          />
+        </picture>
 
         <div className="upcoming-hero-texts">
           {typedText.split("\n").map((line, idx) => (

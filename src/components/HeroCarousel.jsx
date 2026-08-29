@@ -5,10 +5,11 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-export default function HeroCarousel() {
+export default function HeroCarousel({ image, mobileImage, video }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    if (!video) return;
     const handleScroll = () => {
       const shouldPause = window.scrollY > 50;
       if (videoRef.current) {
@@ -16,7 +17,7 @@ export default function HeroCarousel() {
           videoRef.current.pause();
         } else {
           // Play might fail if user hasn't interacted, catch it
-          videoRef.current.play().catch(e => console.log(e));
+          videoRef.current.play().catch((e) => console.log(e));
         }
       }
     };
@@ -25,7 +26,7 @@ export default function HeroCarousel() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [video]);
 
   return (
     <section className="hero-section">
@@ -35,7 +36,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Banner Area */}
-      <div className="hero-banner">
+      <div className={`hero-banner ${mobileImage ? 'hero-banner--mobile-auto' : ''}`}>
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
@@ -45,17 +46,26 @@ export default function HeroCarousel() {
         >
           <SwiperSlide>
             <div className="slide">
-              <video
-                ref={videoRef}
-                src="https://res.cloudinary.com/wdfwbagg/video/upload/v1786014537/landingVideo_io88dy.mp4"
-                className="slide-image"
-                autoPlay
-                muted
-                loop
-
-                playsInline
-                style={{ objectFit: "cover", width: "100%", height: "100%" }}
-              />
+              {video ? (
+                <video
+                  ref={videoRef}
+                  src={video}
+                  className="slide-image"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <picture>
+                  {mobileImage && <source media="(max-width: 768px)" srcSet={mobileImage} />}
+                  <img
+                    src={image || "https://res.cloudinary.com/wdfwbagg/image/upload/v1787836279/Agastya_uap2tb.jpg"}
+                    className="slide-image"
+                    alt="Banner"
+                  />
+                </picture>
+              )}
               <div className="slide-overlay" />
             </div>
           </SwiperSlide>

@@ -67,7 +67,8 @@ const book5 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787031544/WEST
 const book6 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787044825/OCEAN_27_CTA_POP-UP_534X415_px_a3x5xq.webp"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-const herowestside = "https://res.cloudinary.com/wdfwbagg/image/upload/v1786598856/westsideelevation_609x550px_vj1kxt.jpg";
+const herowestside = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787893895/Westside_gn8tki.jpg";
+const herowestsidemobile = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787999617/Westside_mob_gls9d5.jpg";
 const westsiteamenities = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787032598/WESTSIDE_AMENITIES_654X650_PX_dps4fa.webp";
 import { KeyRound, Trees, Sparkles, LayoutPanelTop } from "lucide-react";
 const overviewimg = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787227500/overview_hxi0e0.jpg";
@@ -824,7 +825,7 @@ export default function VooraWestside() {
         </div>
       </div> */}
 
-      <HeroCarousel />
+      <HeroCarousel image={herowestside} mobileImage={herowestsidemobile} />
 
       {/* ── Ribbon ── */}
       <section className="rg-section">

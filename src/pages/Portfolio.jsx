@@ -445,7 +445,7 @@ export default function Portfolio() {
     <div className="portfolio-page">
 
       {/* ── HERO ── */}
-      <HeroCarousel />
+      <HeroCarousel video="https://res.cloudinary.com/wdfwbagg/video/upload/v1786014537/landingVideo_io88dy.mp4" />
       {/* <HeroRibbon  /> */}
 
 

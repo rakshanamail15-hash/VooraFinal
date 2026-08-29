@@ -61,7 +61,8 @@ const book4 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787045486/HOME
 
 const book5 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787031544/WESTSIDE_CTA_POP-UP_534X415_PX_fni06m.webp";
 const book6 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787044825/OCEAN_27_CTA_POP-UP_534X415_px_a3x5xq.webp"
-
+const beckfordaboutbanner = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787894513/Beckford_fqdsab.jpg";
+const beckfordmobilebanner = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787895045/ChatGPT_Image_Aug_28_2026_11_00_28_AM_vsgyfi.png";
 const beckfordabout = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917174/beckfordabout_nnpjck.webp"
 const contact = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917267/contact_muhlva.webp"
 const amenity = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787045802/BECKFORD_AMENITES_654X650_px_cndmtn.webp"
@@ -841,7 +842,7 @@ export default function VooraBeckford() {
         </div>
       </div> */}
 
-      <HeroCarousel />
+      <HeroCarousel image={beckfordaboutbanner} mobileImage={beckfordmobilebanner} />
 
       {/* ── Ribbon ── */}
       <section className="rg-section">

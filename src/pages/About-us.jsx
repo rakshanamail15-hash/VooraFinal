@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './About-us.css';
 import '../components/About.css';
 const hero2 = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1787048735/ABOUT_US_-_HERO_BANNER_1349X500_px_l3mqep.webp';
+const heromobile = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1788000643/HOME_d54qdu.jpg';
 // const hero2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787047308/VOORA_486X456_HOME_ABOUT_US_copy_qem2g7.webp"
 const user = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1785917335/user_z37p18.png';
 const book3 = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1785917264/book3_naly9e.png';
@@ -153,11 +154,15 @@ export default function AboutUsPage() {
     <div className="one-sea-page">
 
       {/* ── Hero ── */}
-      <section className="about-hero">
-        <div
-          className="hero-bg-image"
-          style={{ backgroundImage: `url(${hero2})` }}
-        />
+      <section className="about-hero about-hero-auto">
+        <picture>
+          <source media="(max-width: 768px)" srcSet={heromobile} />
+          <img
+            src={hero2}
+            className="hero-bg-image about-banner-img"
+            alt="About Us"
+          />
+        </picture>
       </section>
 
       {/* ── Voora Highlights ── */}

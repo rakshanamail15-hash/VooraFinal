@@ -348,6 +348,18 @@
   .hj-card-title {
     font-size: 22px;
   }
+
+  .blog-hero-auto {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  img.blog-banner-img {
+    height: auto !important;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+  }
 }
 
 @media (max-width: 576px) {

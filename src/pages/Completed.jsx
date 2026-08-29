@@ -35,6 +35,7 @@ const voorajktower = "https://res.cloudinary.com/wdfwbagg/image/upload/v17859173
 const voorasreela = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917337/voorasreelaterraces_rf2cpb.webp";
 // import residentialcompleted from "../assets/image/residentialcompleted.webp";
 const residentialcompleted = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787047612/RESIDENTIAL_COMPLETED_PROJECTS_-_HERO_BANNER_ahbtho.webp"
+const completedmobile = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787899256/completedmobile_ctoqtz.png";
 const trm = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917335/TRM_nltdhd.webp";
 import CompletedProjects from "../components/CompletedProjects";
 
@@ -285,11 +286,14 @@ export default function CompletedProject() {
       <section className="upcoming-hero">
         {/* Real <img> so the full banner (with baked-in text) is visible
             at the image's natural aspect ratio without cropping */}
-        <img
-          src={residentialcompleted}
-          alt="Residential Completed Projects"
-          className="upcoming-hero-img"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet={completedmobile} />
+          <img
+            src={residentialcompleted}
+            alt="Residential Completed Projects"
+            className="upcoming-hero-img"
+          />
+        </picture>
       </section>
       <CompletedProjects />
     </>

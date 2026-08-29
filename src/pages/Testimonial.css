@@ -247,6 +247,18 @@
     flex: 0 0 calc(100% - 16px) !important;
   }
 
+  .ts-hero-auto {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  img.testi-banner-img {
+    height: auto !important;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
   .shorts-track .vs-card iframe {
     height: 350px !important;
   }

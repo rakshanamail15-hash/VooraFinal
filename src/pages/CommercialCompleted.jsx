@@ -34,7 +34,7 @@ const vooraradhahomes = "https://res.cloudinary.com/wdfwbagg/image/upload/v17859
 const voorajktower = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917336/voorajktower_tqxxjl.webp";
 const voorasreela = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917337/voorasreelaterraces_rf2cpb.webp";
 const commercialcompleted2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787317386/commercialcompleted_2_jwkjmp.webp";
-// const commercialcompleted2 = ""
+const commercialcompletedmobile = "https://res.cloudinary.com/wdfwbagg/image/upload/v1788001184/Commercial__xuseua.jpg";
 const trm = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917335/TRM_nltdhd.webp";
 const ocean27 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1786008732/ocea2_klyrjm.jpg"
 // import tblock from "../assets/image/tblockheroabout.webp"
@@ -430,17 +430,15 @@ export default function CommercialCompleted() {
       </div>
 
       {/* HERO SECTION */}
-      <section
-        className="upcoming-hero"
-        style={{ backgroundImage: `url(${commercialcompleted2})` }}
-      >
-        {/* Real <img> so the full banner displays at natural aspect ratio
-            without any cropping on any device */}
-        <img
-          src={commercialcompleted2}
-          alt="Commercial Completed Projects"
-          className="upcoming-hero-img"
-        />
+      <section className="upcoming-hero">
+        <picture>
+          <source media="(max-width: 768px)" srcSet={commercialcompletedmobile} />
+          <img
+            src={commercialcompleted2}
+            alt="Commercial Completed Projects"
+            className="upcoming-hero-img"
+          />
+        </picture>
       </section>
 
 

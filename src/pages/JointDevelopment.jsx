@@ -7,14 +7,13 @@ import "./JointDevelopment.css";
 const overviewImage = "https://res.cloudinary.com/wdfwbagg/image/upload/v1786599958/Voora_colabration_image_vduis9.jpg";
 import { ShieldCheck, TrendingUp, Handshake, FileText, CheckCircle, Home, MapPin, Key, Plus, Minus } from "lucide-react";
 const upcomingbanner = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787634861/Joint_Development_Page_-_Hero_Banner_b00tvb.webp";
+const upcomingbannermobile = "https://res.cloudinary.com/wdfwbagg/image/upload/v1788000153/Joint_development_of91zc.jpg";
 // const upcomingbanner = "https://res.cloudinary.com/wdfwbagg/image/upload/v1786598406/voora_upcoming_project_o0esev.jpg";
 const join1 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917283/join1_flfzfd.webp";
 const join2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917284/join2_iw0kyq.jpg";
 const join3 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917284/join3_jufs33.jpg";
 const join4 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917285/join4_sixmn1.jpg";
 const join5 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917285/join5_mgjgxt.jpg";
-
-
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -233,11 +232,14 @@ export default function JointDevelopment() {
     <div className="jd-page">
       {/* ── 1. Hero Banner ── */}
       <section className="upcoming-hero">
-        <img
-          src={upcomingbanner}
-          alt="Voora Residential Upcoming Projects"
-          className="upcoming-hero-img"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet={upcomingbannermobile} />
+          <img
+            src={upcomingbanner}
+            alt="Voora Residential Upcoming Projects"
+            className="upcoming-hero-img"
+          />
+        </picture>
       </section>
 
       {/* ── 2. Overview Section ── */}
@@ -326,7 +328,7 @@ export default function JointDevelopment() {
               color: "white"
             }}
           >
-            Find your Perfect 
+            Find your Perfect
             <br className="br-only" />
             <span
               className="accent"

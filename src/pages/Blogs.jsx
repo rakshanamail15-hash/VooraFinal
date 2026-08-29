@@ -53,6 +53,7 @@ const blog47 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787203205/blo
 const blog48 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787203212/blog48_ooezlu.jpg";
 const blog49 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787203215/blog49_cqie4m.jpg";
 const hero2 = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1787203208/blog_bfrnwa.webp';
+const blogmobile = 'https://res.cloudinary.com/wdfwbagg/image/upload/v1787899552/blogbannermobile_xqzj0g.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -681,11 +682,15 @@ const Blog = () => {
     <section className="hj-section">
       <div className="hj-container">
         {/* ── Hero ── */}
-        <section className="about-hero">
-          <div
-            className="hero-bg-image"
-            style={{ backgroundImage: `url(${hero2})` }}
-          />
+        <section className="about-hero blog-hero-auto">
+          <picture>
+            <source media="(max-width: 768px)" srcSet={blogmobile} />
+            <img
+              src={hero2}
+              className="hero-bg-image blog-banner-img"
+              alt="Blog Banner"
+            />
+          </picture>
         </section>
 
         {/* ── Latest Articles Grid ── */}

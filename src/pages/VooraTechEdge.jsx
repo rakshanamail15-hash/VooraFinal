@@ -10,7 +10,8 @@ import SiteVisitForm from "../components/SiteVisitForm";
 import { SITE_VISIT_ENDPOINTS } from "../config/siteVisitEndpoints";
 // import locationimg from "../assets/image/TechEdgeMap.jpeg";
 const locationimg = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787039071/TechEdgeMap_j8nkks.jpg";
-const hero2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917330/techedgehero_m7bxdp.webp";
+const hero2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787894199/Tech_Edge_z4muj1.jpg";
+const heromobile2 = "https://res.cloudinary.com/wdfwbagg/image/upload/v1788000010/Tech_Edge_mob_bsfa6a.jpg";
 // import about from "../assets/image/techexte1.webp";
 const about = "https://res.cloudinary.com/wdfwbagg/image/upload/v1787034099/TECH_EDGE_OVERVIEW_609x550_px_h0pkcw.webp";
 const gallery = "https://res.cloudinary.com/wdfwbagg/image/upload/v1785917330/techexte3_pr8e19.webp";
@@ -797,7 +798,7 @@ export default function VooraTechEdge() {
         </div>
       </div> */}
 
-      <HeroCarousel />
+      <HeroCarousel image={hero2} mobileImage={heromobile2} />
 
       {/* ── Ribbon ── */}
       <section className="rg-section">
@@ -1139,7 +1140,7 @@ export default function VooraTechEdge() {
               <div className="project-plan-cards" onClick={() => setPopupImage(plan4)}>
                 <img src={plan4} alt="Plan 4" />
               </div>
-              
+
               <div className="project-plan-cards" onClick={() => setPopupImage(plan5)}>
                 <img src={plan5} alt="Plan 5" />
               </div>

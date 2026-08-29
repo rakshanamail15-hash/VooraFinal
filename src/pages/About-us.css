@@ -371,6 +371,18 @@
     min-height: 121px;
   }
 
+  .about-hero-auto {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  img.about-banner-img {
+    height: auto !important;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
   .hero-bg-image {
     background-position: center center;
   }
